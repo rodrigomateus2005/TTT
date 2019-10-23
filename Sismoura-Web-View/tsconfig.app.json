@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": []
+  },
+  "include": [
+    "src/**/*.ts"
+    , "../Sismoura-Web-Controls/src/**/*.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "src/**/*.spec.ts",
+    "../Sismoura-Web-Controls/src/test.ts",
+    "../Sismoura-Web-Controls/src/**/*.spec.ts"
+  ]
+}

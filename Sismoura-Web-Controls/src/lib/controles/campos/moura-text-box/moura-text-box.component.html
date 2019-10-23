@@ -1,0 +1,8 @@
+<moura-campo [base]="ctrl">
+  <content>
+      <input type="text" [(ngModel)]="ngModelMoura" class="col-sm-12" *ngIf="multLine && tipo" />
+      <input type="text" [(ngModel)]="ngModelMoura" class="col-sm-12" *ngIf="tipo == 1" so-numeros [casas-decimais]="casasDecimaisSoNumeros" />
+      <input type="text" [(ngModel)]="ngModelMoura" class="col-sm-12" *ngIf="tipo == 2" mascara-directive="mascara" />
+      <textarea [(ngModel)]="ngModelMoura" class="col-sm-12" *ngIf="multLine && !tipo"></textarea>
+  </content>
+</moura-campo>

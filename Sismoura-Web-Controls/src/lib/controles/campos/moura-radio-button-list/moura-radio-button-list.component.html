@@ -1,0 +1,13 @@
+<moura-campo [base]="ctrl">
+  <content>
+    <div class="div-list col-sm-12">
+      <div *ngFor="let item of ngDataSource; index as i">
+        <label [for]="'moura-radio-' + scopeId + '-' + i" [class]="cssColunasRadio">
+          <input type="radio" [id]="'moura-radio-' + scopeId + '-' + i" [name]="'moura-radio-' + scopeId"
+            [value]]="preparaValue(item)" [(ngModel)]="ngModelMoura">
+          {{ preparaText(item) }}
+        </label>
+      </div>
+    </div>
+  </content>
+</moura-campo>
