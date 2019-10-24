@@ -5,8 +5,9 @@
     "types": []
   },
   "include": [
-    "src/**/*.ts"
-    , "../Sismoura-Web-Controls/src/**/*.ts"
+    "src/**/*.ts",
+    "../../Repositorio/SismouraWeb/Sismoura.Web/Sismoura.Web.View1.d.ts",
+    "../Sismoura-Web-Controls/src/**/*.ts"
   ],
   "exclude": [
     "src/test.ts",

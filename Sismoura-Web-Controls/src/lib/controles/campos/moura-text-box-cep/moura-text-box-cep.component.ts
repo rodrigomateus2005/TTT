@@ -1,5 +1,7 @@
 import { Component, Input, ElementRef } from '@angular/core';
 import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
+import { MouraService } from 'src/lib/services/moura.service';
+
 
 @Component({
   selector: 'moura-text-box-cep',
@@ -8,8 +10,7 @@ import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
 })
 export class MouraTextBoxCepComponent extends MouraCampoComponent {
 
-  // public ngEndereco: SiSMoura.Core.Entity.MouraTextBoxCEPRetornoPesquisa;
-  public ngEndereco: any;
+  public ngEndereco: SiSMoura.Core.Entity.MouraTextBoxCEPRetornoPesquisa;
 
   private $ngModelMoura;
   public get ngModelMoura(): any {
@@ -36,10 +37,11 @@ export class MouraTextBoxCepComponent extends MouraCampoComponent {
       return;
     }
 
-    var param: any = { CEP: cep };
+    const param: any = { CEP: cep };
 
-    var mostrarAlertaCep = () => {
-      MostrarAlerta("Ocorreu um erro ao consultar o CEP.<br />Possíveis causas: Serviço indisponível / Cep não existe / Sem conexão com a internet");
+    const mostrarAlertaCep = () => {
+      MostrarAlerta(`Ocorreu um erro ao consultar o CEP.<br />
+      Possíveis causas: Serviço indisponível / Cep não existe / Sem conexão com a internet`);
     };
 
     this.mouraService.executarConsultaCEP(cep).then((retorno) => {

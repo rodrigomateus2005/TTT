@@ -14,7 +14,13 @@ export class MouraControlComponent implements OnInit {
     return this.base ? this.base : this;
   }
 
+  private $uniqueID: number;
+  protected get uniqueID(): number {
+    return this.$uniqueID;
+  }
+
   public constructor(protected elementRef: ElementRef) {
+    this.$uniqueID = new Date().getTime();
   }
 
   ngOnInit(): void {

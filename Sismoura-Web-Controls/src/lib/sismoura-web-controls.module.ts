@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MouraButtonComponent } from './Controles/Botoes/moura-button/moura-button.component';
+import { HttpClientModule } from '@angular/common/http';
+
+// import { ApiModule } from './api/api.module';
+
+import { MouraButtonComponent } from './controles/botoes/moura-button/moura-button.component';
 import { MouraControlComponent } from './controles/core/moura-control/moura-control.component';
 import { MouraCampoComponent } from './controles/campos/moura-campo/moura-campo.component';
 import { MouraComboBoxComponent } from './controles/campos/moura-combo-box/moura-combo-box.component';
@@ -28,7 +32,6 @@ import { MouraTabPageComponent } from './controles/painel/moura-tab-page/moura-t
 import { MouraTabPanelComponent } from './controles/painel/moura-tab-panel/moura-tab-panel.component';
 import { JqueryUiSelectMenuDirective } from './diretivas/jquery-ui-select-menu.directive';
 import { SoNumerosDirective } from './diretivas/so-numeros.directive';
-import { ApiModule } from './api/api.module';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,8 @@ import { ApiModule } from './api/api.module';
   imports: [
     CommonModule,
     FormsModule,
-    ApiModule
+    // ApiModule,
+    HttpClientModule
   ],
   providers: [],
   exports: [

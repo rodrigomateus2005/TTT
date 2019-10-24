@@ -12,7 +12,4 @@ export class MouraFileUploadComponent extends MouraCampoComponent {
     super(elementRef);
   }
 
-  ngOnInit() {
-  }
-
 }
