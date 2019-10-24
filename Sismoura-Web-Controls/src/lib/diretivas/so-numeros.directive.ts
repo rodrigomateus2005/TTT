@@ -2,7 +2,8 @@ import { Directive, Input, ElementRef, HostListener } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
 @Directive({
-  selector: '[soNumeros]'
+  selector: '[ngModel][soNumeros]'
+  , providers: [NgModel]
 })
 export class SoNumerosDirective {
 
@@ -18,29 +19,7 @@ export class SoNumerosDirective {
     this.$casasDecimais = value;
   }
 
-  private $ngModel: NgModel;
-  public get ngModel(): NgModel {
-    return this.$ngModel;
-  }
-  public set ngModel(value: NgModel) {
-    this.$ngModel = value;
-
-    if (value) {
-      value.$parsers.push((text) => {
-        return this.parserSoNumeros(text);
-      });
-
-      value.$formatters.push((value: any): any => {
-        return this.formaterSoNumeros(value);
-      });
-
-      value.$overrideModelOptions({
-        updateOn: 'blur'
-      });
-    }
-  }
-
-  @HostListener('keypress')
+  @HostListener('keypress', ['$event'])
   private onKeyPress(event: KeyboardEvent): boolean {
     return this.verificadecimais(event);
   }
@@ -50,8 +29,8 @@ export class SoNumerosDirective {
     const separadorDecimal = Globalize.cldr.main('numbers/symbols-numberSystem-latn/decimal');
 
     if (this.casasDecimais) {
-      if (separadorDecimal.charCodeAt(0) == tecla && !IsFirefoxControlKeyEvent(e)) {
-        if (this.ngModel.$viewValue.indexOf(separadorDecimal) < 0) {
+      if (separadorDecimal.charCodeAt(0) === tecla && !IsFirefoxControlKeyEvent(e)) {
+        if (this.ngModel.value.toString().indexOf(separadorDecimal) < 0) {
           return true;
         }
       }
@@ -74,28 +53,35 @@ export class SoNumerosDirective {
     return '';
   }
 
-  private parserSoNumeros(text) {
+  private ngModelValueChanged(text) {
     if (text) {
       let valorParsed;
       if (text.CNum) {
         valorParsed = text.CNum().Format(this.casasDecimais).CNum();
+        this.ngModel.viewToModelUpdate(valorParsed);
       } else {
         valorParsed = text;
       }
 
       const transformedInput = valorParsed.Format(this.casasDecimais);
 
-      if (transformedInput !== text) {
-        this.ngModel.$setViewValue(transformedInput);
-        this.ngModel.$render();
+      if (transformedInput !== text.toString()) {
+        this.ngModel.valueAccessor.writeValue(transformedInput);
+        // this.ngModel.$render();
       }
-
-      return valorParsed;
     }
-    return undefined;
   }
 
-  constructor(private elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef, private ngModel: NgModel) {
+    ngModel.valueChanges.subscribe((value) => {
+      this.ngModelValueChanged(value);
+    });
+
+    ngModel.options.updateOn = 'blur';
+
+    // value.$formatters.push((value: any): any => {
+    //   return this.formaterSoNumeros(value);
+    // });
   }
 
 }

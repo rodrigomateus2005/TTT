@@ -1,14 +1,315 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+
+<html id="html" xmlns="http://www.w3.org/1999/xhtml" lang="pt" pathBase="./" ng-app="SisMouraApp">
+
 <head>
+  <title>
+
+  </title>
+</head>
+
+<head>
+
   <meta charset="utf-8">
-  <title>SismouraWebView</title>
+
   <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta id="IECompatibilityMeta" http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+
+  <meta name="description" content="Moura Informática" />
+
+  <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon" />
+
+  <script type="text/javascript" src="assets/Internacionalizacao.js"></script>
+  <script type="text/javascript" src="assets/ScriptMoura.js"></script>
+  <script type="text/javascript" src="assets/ScriptDevExtreme.js"></script>
+  <script type="text/javascript" src="assets/Globalize.js"></script>
+
+  <link rel="stylesheet" href="assets/CssMoura.css" />
+
+  <script type="text/javascript">
+    function exibirMenu() {
+      if (LeftPanel.IsExpandable()) {
+        LeftPanel.Toggle();
+      }
+    }
+
+    function OnDevExpressInit(s, e) {
+      $("div[role=tooltip]").remove();
+
+      $(document).trigger("DevExpressInit");
+    }
+
+    function OnDevExpressEndCallback(s, e) {
+      var evt = new jQuery.Event("DevExpressEndCallback");
+      evt.DevArguments = e;
+      try {
+        evt.callback = arguments.callee.caller.arguments.callee.caller.arguments.callee.caller.arguments.callee.caller.arguments.callee.caller.arguments[0];
+      } catch (e) {
+        var ronaldo = e;
+      }
+
+      if (evt.callback) {
+        $(evt.callback.mainElement).find("[script-moura]").each(function () { eval(this.innerText) });
+      }
+
+      $(document).trigger(evt);
+    }
+
+    $(document).ready(function () {
+      // Desabilitado o CTRL + J pois o leitor de codigo de barras evia esse comando após ler um código de barras.
+      $(document).keydown(function (e) {
+        if (e.ctrlKey && (e.which == 74 || e.keyCode == 74)) {
+          e.preventDefault();
+        }
+      });
+    });
+
+  </script>
 </head>
-<body>
-  <app-root></app-root>
+
+<body id="bodyPrincipal" onkeydown="KeydownTela(event)">
+  <div id="divCarregando2" class="divCarregando" style="display: none;" tabindex="1">
+    <div id="divTransparencia" class="transparencia"></div>
+    <div class="divCarregandoInterno">
+      <img src="Images/Gif-Moura.gif" class="imagemCarregando" />
+      <span id="mensagemCarregando" class="mensagemCarregando">Carregando ...</span>
+    </div>
+  </div>
+
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <form method="post" action="Login" id="form1" class="form-horizontal" style="height: 100%" autocomplete="off"
+    novalidate="">
+
+    <script
+      src="/WebResource.axd?d=afgEDCJFqXijAJ2RD4i8sGB3yl3QI8_y_tHDMsaEwdSNroahI3vhXo1hleotdfZm55lEAB2CKCGbO5C1ETZKUUe7yi7TO65nbeDct7mmuiY1&amp;t=636934614280000000"
+      type="text/javascript"></script>
+
+    <script id="dxis_1364490310" src="/DXR.axd?r=1_230-DKh2j" type="text/javascript"></script>
+    <script id="dxis_193497018" src="/DXR.axd?r=1_134-DKh2j" type="text/javascript"></script>
+    <script
+      src="/ScriptResource.axd?d=9Sa-FzoKqnf90zHPrARUTM9gB-DkNqdvK_ZLVTFSpLRoCVXdH_Un4ohZa-sC5xjwSxFzzgFjoCb04nu2tHxmzBVC7-Kw1meQKYJvqLDZkhw2lDFL1GMQ82XK1NptpOTWYE8nTe0y4XIyW71gpAz7jo_07d9I-704ZWTZPfaqNfxJU-G9HLhPccjgQPZ3bnKG0&t=ffffffff80bd9323"
+      type="text/javascript"></script>
+    <script
+      src="/ScriptResource.axd?d=lJzC_Q0Qbxp2Is6BzC8bYq2md3dYOMGV3lVJ0T4s5180u9z0nB-bqUiBNzOrkrZFNbQFlhoxaLZSbfTHkN_tlPQkfs1hiBLsCx3kDO9XkVVIC3A-awiMKmfnDIkjYxJSwHx-hdgmUNERSCUSs4EYBtq9xvB8ZBoPx94--lUHxtQgja9AO-MmbLPp3M1jII1t0&t=ffffffff80bd9323"
+      type="text/javascript"></script>
+    <script id="dxis_1805595365" src="/DXR.axd?r=1_223,1_168,1_189-DKh2j" type="text/javascript"></script>
+    <script id="dxss_416805110" type="text/javascript">
+
+    </script>
+
+    <input type="hidden" name="ctl00$hdnPathBase" id="hdnPathBase" value="./" />
+
+
+    <app-root></app-root>
+
+
+    <script type="text/javascript">
+      //<![CDATA[
+      //Utilizado para obter o clientid do componente.
+      //Mudamos no webconfig o clientidmode para static para diminuir o tamanho da página
+      //ao fazer isso o .net se perde no update panel
+      if (Sys.WebForms && Sys.WebForms.PageRequestManager) {
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+        prm._findNearestElement = function (uniqueID) {
+          //return null;
+          while (uniqueID.length > 0) {
+            var clientID = this._uniqueIDToClientID(uniqueID);
+            var element = document.getElementById(clientID);
+            if (element) {
+              return element;
+            }
+            var indexOfFirstDollar = uniqueID.indexOf('$', 1);
+            if (indexOfFirstDollar === -1) {
+              return null;
+            }
+            uniqueID = uniqueID.substring(indexOfFirstDollar + 1, uniqueID.length);
+          }
+          return null;
+        };
+      }
+//]]>
+    </script>
+  </form>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("body").addClass("loaded");
+    });
+
+    var lang = $("html").attr("lang");
+    var pathBase = $("html").attr("pathBase");
+
+    ocultaBarraRolagem();
+    mostrarLogo();
+    setTimeout(function () { ocultaBarraRolagem(); }, 1000);
+
+    var mostrandoRelogio = true;
+
+    function mostrarRelogio() {
+      $(".hora").fadeIn(3000, atualizarRelogio());
+      $(".logo").fadeOut(3000);
+    }
+
+    function mostrarLogo() {
+      $(".logo").fadeIn(3000);
+      $(".hora").fadeOut(3000);
+    }
+
+    function animarRelogio() {
+      if (mostrandoRelogio) {
+        mostrarLogo();
+        mostrandoRelogio = false;
+      } else {
+        mostrarRelogio();
+        mostrandoRelogio = true;
+      }
+      ocultaBarraRolagem();
+    }
+
+    function atualizarRelogio() {
+      var d = new Date();
+
+      var relogio = $(".relogioGRD");
+
+      if (relogio.css('display') === 'none') {
+        relogio = $(".relogioPQN");
+      }
+
+      relogio.find(".hora");
+
+      relogio.find("p").first().text(Globalize.dateFormatter({ skeleton: "yMEd" })(new Date()));
+      relogio.find("p").last().text(Globalize.dateFormatter({ time: "short" })(new Date()));
+      ocultaBarraRolagem();
+    }
+
+    function ocultaBarraRolagem() {
+      $('html').css('overflow', 'hidden');
+    }
+
+
+    toastr.options = {
+      "closeButton": true,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-top-full-width",
+      "preventDuplicates": false,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "5000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "show",
+      "hideMethod": "hide"
+    }
+
+
+    function ShowProgress() {
+      var modal = $('#divCarregando2');
+      modal.show();
+    }
+
+    function APMoura(url, e) {
+      if (isBotaoClick(e)) {
+        ShowProgress();
+        window.location.href = url;
+      }
+    }
+
+    function isBotaoClick(event) {
+      if ('which' in event) {
+        return event.which === 1; //Verifica se clicou com o botão esquerdo do Mouse
+      } else {
+        return event.button === 0; //Verifica se clicou com o botão esquerdo do Mouse
+      }
+    }
+
+    setTimeout(function () {
+      $('.gradImg').each(function (index) {
+        var idObjeto = this.id;
+        var dxObject = ASPxClientControl.GetControlCollection().GetByName(idObjeto);
+
+        var funcaoAtual = dxObject.expandWindow.OnPopup;
+
+        dxObject.expandWindow.OnPopup = function () {
+          funcaoAtual = funcaoAtual.bind(dxObject.expandWindow)
+          funcaoAtual();
+          $('#' + idObjeto + '_EW_PW-1').css('position', 'fixed');
+          dxObject.expandWindow.AdjustControl();
+        };
+      });
+    }, 1000);
+
+    $(document).ready(CallSeleciona);
+    $(document).on("DevExpressInit", CallSeleciona);
+
+    function CallSeleciona() {
+      $("input:text").focus(function () { $(this).select(); });
+    };
+
+    if (window["Sys"]) {
+      if (Sys && Sys.WebForms && Sys.WebForms.PageRequestManager && Sys.WebForms.PageRequestManager.getInstance()) {
+        var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+        prm.add_endRequest(function () {
+          $("[script-moura]").each(function () { eval(this.innerText) });
+
+          isEsperaAberta = false;
+          $(document).trigger("AspEndRequest");
+        });
+
+        prm.add_beginRequest(function () {
+          isEsperaAberta = true;
+        });
+      }
+    }
+
+    $("[traduzir]").each(function (index, element) {
+      if ($(element).children().length == 0) {
+        var texto = $(element).text();
+        if (texto) {
+          $(element).text(texto.GetString());
+        }
+
+        var placeHolder = $(element).attr("placeholder");
+        if (!String.IsNullOrWhiteSpace(placeHolder)) {
+          $(element).attr("placeholder", placeHolder.GetString());
+        }
+      }
+    });
+
+    $("[title]").each(function (index, element) {
+      if ($(element).children().length == 0) {
+        var tooltip = $(element).attr("title");
+        if (!String.IsNullOrWhiteSpace(tooltip)) {
+          $(element).attr("title", tooltip.GetString());
+        }
+      }
+    });
+    var titulo = $("title").text();
+    if (titulo) {
+      titulo = titulo.trim().GetString();
+      $("title").text(titulo);
+    }
+
+    //Animação do tooltip
+    $(document).tooltip();
+
+    atualizarRelogio();
+    setInterval(function () { animarRelogio(); }, 10000);
+  </script>
 </body>
+
 </html>

@@ -49,8 +49,8 @@ export class MouraComboBoxComponent extends MouraCampoComponent {
     this.$permiteNulo = value;
   }
 
-  constructor(elementRef: ElementRef) {
-    super(elementRef);
+  constructor() {
+    super();
   }
 
   public preparaValue(item: any) {

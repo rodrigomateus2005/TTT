@@ -17,8 +17,8 @@ export class MouraLabelComponent extends MouraCampoComponent {
     this.$ngModelMoura = value;
   }
 
-  constructor(elementRef: ElementRef) {
-    super(elementRef);
+  constructor() {
+    super();
   }
 
 }

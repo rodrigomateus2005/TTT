@@ -35,8 +35,8 @@ export class MouraAccordionComponent  extends MouraControlComponent {
       }
   }
 
-  public constructor(elementRef: ElementRef) {
-    super(elementRef);
+  public constructor() {
+    super();
   }
 
   public toggle() {

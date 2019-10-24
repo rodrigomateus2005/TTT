@@ -46,8 +46,8 @@ export class MouraEmailComponent extends MouraControlComponent {
   public assunto: string;
   public mensagem: string;
 
-  public constructor(elementRef: ElementRef, public mouraService: MouraService) {
-    super(elementRef);
+  public constructor(public mouraService: MouraService) {
+    super();
 
     this.anexos = [];
     this.colunasGridAnexo = [];

@@ -17,8 +17,8 @@ export class MouraMenuComponent extends MouraControlComponent {
       this.$procurar = value;
   }
 
-  public constructor(elementRef: ElementRef, public mouraService: MouraService) {
-    super(elementRef);
+  public constructor(public mouraService: MouraService) {
+    super();
   }
 
   public getMenus(): any[] {

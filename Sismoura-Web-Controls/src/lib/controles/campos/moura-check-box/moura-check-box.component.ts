@@ -26,8 +26,8 @@ export class MouraCheckBoxComponent extends MouraCampoComponent {
     this.$text = value;
   }
 
-  constructor(elementRef: ElementRef) {
-    super(elementRef);
+  constructor() {
+    super();
   }
 
 }

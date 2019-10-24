@@ -82,8 +82,8 @@ export class MouraTextBoxProcuraComponent extends MouraCampoComponent {
     this.$permitirProcurar = value;
   }
 
-  public constructor(elementRef: ElementRef, public mouraService: MouraService) {
-    super(elementRef);
+  public constructor(public mouraService: MouraService) {
+    super();
 
     this.permitirProcurar = true;
     this.carregarEngine();

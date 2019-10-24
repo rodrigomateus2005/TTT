@@ -28,8 +28,8 @@ export class MouraTextBoxCPFComponent extends MouraCampoComponent {
     }
   }
 
-  public constructor(elementRef: ElementRef, public mouraService: MouraService) {
-    super(elementRef);
+  public constructor(public mouraService: MouraService) {
+    super();
   }
 
   public getLabel(): string {

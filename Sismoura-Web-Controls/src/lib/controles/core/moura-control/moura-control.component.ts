@@ -19,7 +19,7 @@ export class MouraControlComponent implements OnInit {
     return this.$uniqueID;
   }
 
-  public constructor(protected elementRef: ElementRef) {
+  public constructor() {
     this.$uniqueID = new Date().getTime();
   }
 

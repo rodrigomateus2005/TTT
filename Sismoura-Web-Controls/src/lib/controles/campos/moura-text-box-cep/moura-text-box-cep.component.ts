@@ -23,8 +23,8 @@ export class MouraTextBoxCepComponent extends MouraCampoComponent {
     this.ngEndereco = null;
   }
 
-  public constructor(elementRef: ElementRef, public mouraService: MouraService) {
-    super(elementRef);
+  public constructor(public mouraService: MouraService) {
+    super();
   }
 
   public clickBotaoProcurar() {

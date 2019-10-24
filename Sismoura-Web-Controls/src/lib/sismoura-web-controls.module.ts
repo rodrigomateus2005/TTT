@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 // import { ApiModule } from './api/api.module';
 
@@ -66,11 +67,13 @@ import { DevExtremeGridViewDirective } from './diretivas/dev-extreme-grid-view.d
   DevExtremeGridViewDirective],
   imports: [
     CommonModule,
+    // BrowserModule,
     FormsModule,
     // ApiModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   exports: [
     MouraControlComponent,
     MouraButtonComponent,

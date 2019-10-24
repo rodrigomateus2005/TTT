@@ -30,8 +30,8 @@ export class MouraTabPageComponent extends MouraControlComponent {
       return 'tab-page-' + this.uniqueID;
   }
 
-  public constructor(elementRef: ElementRef) {
-    super(elementRef);
+  public constructor() {
+    super();
   }
 
   public selecionar() {

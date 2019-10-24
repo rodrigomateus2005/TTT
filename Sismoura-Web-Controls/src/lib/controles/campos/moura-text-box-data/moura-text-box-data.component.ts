@@ -17,8 +17,8 @@ export class MouraTextBoxDataComponent extends MouraCampoComponent {
     this.$ngModelMoura = value;
   }
 
-  public constructor(elementRef: ElementRef) {
-    super(elementRef);
+  public constructor() {
+    super();
   }
 
 }

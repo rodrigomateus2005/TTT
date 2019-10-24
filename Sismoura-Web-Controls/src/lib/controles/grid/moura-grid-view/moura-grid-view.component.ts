@@ -143,8 +143,8 @@ export class MouraGridViewComponent extends MouraControlComponent implements DoC
 
   public onSelecionouLinha: ($options) => void;
 
-  constructor(elementRef: ElementRef, private differs: KeyValueDiffers) {
-    super(elementRef);
+  constructor(private differs: KeyValueDiffers) {
+    super();
 
     this.dataSourceDiffer = differs.find({}).create<string, any>();
   }

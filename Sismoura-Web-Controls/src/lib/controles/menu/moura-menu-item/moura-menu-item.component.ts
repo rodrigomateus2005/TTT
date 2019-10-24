@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { MouraControlComponent } from '../../core/moura-control/moura-control.component';
 
 @Component({
@@ -12,6 +12,7 @@ export class MouraMenuItemComponent extends MouraControlComponent {
   public get menu(): any {
     return this.$menu;
   }
+  @Input()
   public set menu(value: any) {
     this.$menu = value;
   }
@@ -80,8 +81,8 @@ export class MouraMenuItemComponent extends MouraControlComponent {
     return retorno;
   }
 
-  public constructor(elementRef: ElementRef) {
-    super(elementRef);
+  public constructor() {
+    super();
 
     this.aberto = false;
   }

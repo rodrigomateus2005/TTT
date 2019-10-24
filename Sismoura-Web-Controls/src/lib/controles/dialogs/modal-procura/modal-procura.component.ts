@@ -74,8 +74,8 @@ export class ModalProcuraComponent extends MouraControlComponent {
   public itemSelecionado: CamposProcura;
   public likeSelecionado: any = this.likeText[3];
 
-  public constructor(elementRef: ElementRef, public mouraService: MouraService) {
-    super(elementRef);
+  public constructor(public mouraService: MouraService) {
+    super();
   }
   public abrir(): Promise<ProcuraRetorno> {
       return new Promise((resolve, reject) => {

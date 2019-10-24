@@ -1,15 +1,15 @@
-<moura-control base="$ctrl.ctrl">
+<moura-control [base]="ctrl">
   <content>
-      <li>
-          <a ng-attr-href="{{$ctrl.urlMenu}}" ng-click="$ctrl.clickMenu()" ng-attr-class="{{$ctrl.nivelCss}}">
-              <img alt="menu" ng-attr-src="{{$ctrl.icone}}" ng-if="$ctrl.icone" />
-              {{$ctrl.menu.Titulo}}
-          </a>
-          <ul ng-if="$ctrl.temFilhos && $ctrl.aberto">
-              <span ng-repeat="menuFilho in $ctrl.menu.MenusFilhos">
-                  <moura-menu-item menu="menuFilho"></moura-menu-item>
-              </span>
-          </ul>
-      </li>
+    <li>
+      <a [href]="urlMenu" (click)="clickMenu()" [class]="nivelCss">
+        <img alt="menu" [src]="icone" *ngIf="icone" />
+        {{menu.Titulo}}
+      </a>
+      <ul *ngIf="temFilhos && aberto">
+        <span *ngFor="let menuFilho of menu.MenusFilhos">
+          <moura-menu-item [menu]="menuFilho"></moura-menu-item>
+        </span>
+      </ul>
+    </li>
   </content>
 </moura-control>

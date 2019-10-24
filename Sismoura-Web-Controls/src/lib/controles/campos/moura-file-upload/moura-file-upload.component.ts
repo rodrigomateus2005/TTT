@@ -8,8 +8,8 @@ import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
 })
 export class MouraFileUploadComponent extends MouraCampoComponent {
 
-  constructor(elementRef: ElementRef) {
-    super(elementRef);
+  constructor() {
+    super();
   }
 
 }

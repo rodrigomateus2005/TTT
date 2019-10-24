@@ -1,8 +1,12 @@
-<div class="moura-tab-panel-painel">
+<div class="moura-tab-panel-painel" #divTab>
   <ul class="moura-tab-panel-cabecalho">
-      <li ng-repeat="tab in $ctrl.tabs" class="item"><a ng-attr-href="{{$ctrl.getUrlFull() + '#' + tab.IdTab}}">{{tab.titulo}}</a></li>
+      <li *ngFor="let tab of tabs" class="item">
+        <a [href]="getUrlFull() + '#' + tab.IdTab">tab.titulo</a>
+      </li>
   </ul>
-  <div class="moura-tab-panel-painelInterno" ng-transclude="tabPages">
+  <div class="moura-tab-panel-painelInterno">
+    <ng-content select="tabPages">
 
+    </ng-content>
   </div>
 </div>

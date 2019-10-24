@@ -9,8 +9,8 @@ import { MouraService } from '../../../services/moura.service';
 })
 export class MouraTextBoxTelefoneComponent extends MouraCampoComponent {
 
-  public constructor(elementRef: ElementRef, public mouraService: MouraService) {
-    super(elementRef);
+  public constructor(public mouraService: MouraService) {
+    super();
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
 
 enum TextBoxTipo {
@@ -32,6 +32,9 @@ export class MouraTextBoxComponent extends MouraCampoComponent {
   public casasDecimais: TextBoxCasasDecimais;
   public mascara: string;
 
+  @Input()
+  public ngModelMoura: any;
+
   public get casasDecimaisSoNumeros(): number {
     if (this.casasDecimais === TextBoxCasasDecimais.valor) {
       return 2;
@@ -44,8 +47,8 @@ export class MouraTextBoxComponent extends MouraCampoComponent {
     }
   }
 
-  constructor(elementRef: ElementRef) {
-    super(elementRef);
+  constructor() {
+    super();
   }
 
 }

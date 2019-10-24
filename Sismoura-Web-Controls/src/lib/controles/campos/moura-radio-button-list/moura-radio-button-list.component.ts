@@ -55,8 +55,8 @@ export class MouraRadioButtonListComponent extends MouraCampoComponent {
       return retorno;
   }
 
-  constructor(elementRef: ElementRef) {
-    super(elementRef);
+  constructor() {
+    super();
   }
 
   public preparaValue(item: any) {

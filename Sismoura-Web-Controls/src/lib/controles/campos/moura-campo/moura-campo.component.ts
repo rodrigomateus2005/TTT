@@ -50,8 +50,8 @@ export class MouraCampoComponent extends MouraControlComponent {
     return retorno;
   }
 
-  constructor(elementRef: ElementRef) {
-    super(elementRef);
+  constructor() {
+    super();
     this.tamanhoCampo = TamanhosCampo.full;
   }
 
