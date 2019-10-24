@@ -1,8 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MouraControlComponent } from '../../core/moura-control/moura-control.component';
 import { MouraModalComponent } from '../moura-modal/moura-modal.component';
-import { MouraService } from 'src/lib/services/moura.service';
+import { MouraService } from '../../../services/moura.service';
 import { ProcuraRetorno } from '../modal-procura/iprocura';
+import { MouraGridColumn } from '../../grid/moura-grid-view/moura-grid-column';
 
 @Component({
   selector: 'moura-email',
@@ -80,10 +81,6 @@ export class MouraEmailComponent extends MouraControlComponent {
     this.mouraService.executarGet<any[]>('/controles/Dialogs/MouraEmail', 'GetRemetentes', null).then((remetentes) => {
       this.remetentes = remetentes;
     });
-  }
-
-  public $postLink() {
-
   }
 
   public abrir(): Promise<ProcuraRetorno> {

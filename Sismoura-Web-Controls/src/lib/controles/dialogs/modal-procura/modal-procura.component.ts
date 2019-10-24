@@ -1,8 +1,10 @@
 import { Component, ViewChild, ElementRef, Input } from '@angular/core';
 import { MouraControlComponent } from '../../core/moura-control/moura-control.component';
 import { MouraModalComponent } from '../moura-modal/moura-modal.component';
-import { MouraService } from 'src/lib/services/moura.service';
+import { MouraService } from '../../../services/moura.service';
 import { ProcuraRetorno, IProcura, CamposProcura } from './iprocura';
+import { MouraGridColumn } from '../../grid/moura-grid-view/moura-grid-column';
+import { MouraGridColumnBotaoSelecionar } from '../../grid/moura-grid-view/moura-grid-column-botao-selecionar';
 
 @Component({
   selector: 'modal-procura',

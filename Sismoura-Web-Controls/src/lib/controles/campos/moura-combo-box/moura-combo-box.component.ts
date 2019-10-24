@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild, Input } from '@angular/core';
 import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
-import { JqueryUiSelectMenuDirective } from 'src/lib/diretivas/jquery-ui-select-menu.directive';
+import { JqueryUiSelectMenuDirective } from '../../../diretivas/jquery-ui-select-menu.directive';
 
 @Component({
   selector: 'moura-combo-box',

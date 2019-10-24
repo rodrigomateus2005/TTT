@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { MouraTabPageComponent } from '../moura-tab-page/moura-tab-page.component';
 import { MouraControlComponent } from '../../core/moura-control/moura-control.component';
 
@@ -20,8 +20,8 @@ export class MouraTabPanelComponent extends MouraControlComponent {
       return $(this.elementRef.nativeElement).children();
   }
 
-  public constructor($scope, $element, private $timeout: angular.ITimeoutService) {
-      super($scope, $element);
+  public constructor(elementRef: ElementRef) {
+    super(elementRef);
   }
 
   public recarregar(): void {
@@ -29,7 +29,7 @@ export class MouraTabPanelComponent extends MouraControlComponent {
           this.elementTab.tabs('refresh');
       } else {
           this.elementTab.tabs();
-          this.instance = ($(this.elementRef.nativeElement as any).children().tabs('instance')) as JQueryUI.Tabs;
+          this.instance = ($(this.elementRef.nativeElement as any).children().tabs('instance') as any) as JQueryUI.Tabs;
       }
   }
 
@@ -39,7 +39,7 @@ export class MouraTabPanelComponent extends MouraControlComponent {
       }
       if (this.tabs.filter(x => x === tab).length === 0) {
           this.tabs.push(tab);
-          this.$timeout(() => {
+          setTimeout(() => {
               this.recarregar();
           }, 0, false);
       } else {

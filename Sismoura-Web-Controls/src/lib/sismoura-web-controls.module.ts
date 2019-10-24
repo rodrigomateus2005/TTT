@@ -32,6 +32,7 @@ import { MouraTabPageComponent } from './controles/painel/moura-tab-page/moura-t
 import { MouraTabPanelComponent } from './controles/painel/moura-tab-panel/moura-tab-panel.component';
 import { JqueryUiSelectMenuDirective } from './diretivas/jquery-ui-select-menu.directive';
 import { SoNumerosDirective } from './diretivas/so-numeros.directive';
+import { DevExtremeGridViewDirective } from './diretivas/dev-extreme-grid-view.directive';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { SoNumerosDirective } from './diretivas/so-numeros.directive';
   MouraTabPageComponent,
   MouraTabPanelComponent,
   JqueryUiSelectMenuDirective,
-  SoNumerosDirective],
+  SoNumerosDirective,
+  DevExtremeGridViewDirective],
   imports: [
     CommonModule,
     FormsModule,

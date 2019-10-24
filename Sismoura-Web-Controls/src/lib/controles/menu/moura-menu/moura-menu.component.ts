@@ -1,6 +1,6 @@
 import { Component, ElementRef } from '@angular/core';
 import { MouraControlComponent } from '../../core/moura-control/moura-control.component';
-import { MouraService } from 'src/lib/services/moura.service';
+import { MouraService } from '../../../services/moura.service';
 
 @Component({
   selector: 'moura-menu',
@@ -19,10 +19,6 @@ export class MouraMenuComponent extends MouraControlComponent {
 
   public constructor(elementRef: ElementRef, public mouraService: MouraService) {
     super(elementRef);
-  }
-
-  public $postLink() {
-
   }
 
   public getMenus(): any[] {

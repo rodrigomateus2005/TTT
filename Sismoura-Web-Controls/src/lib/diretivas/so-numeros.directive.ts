@@ -1,4 +1,4 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, Input, ElementRef, HostListener } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
 @Directive({
@@ -6,106 +6,96 @@ import { NgModel } from '@angular/forms';
 })
 export class SoNumerosDirective {
 
-  // private somentePositivo = false;
-  // private somenteNegativo = false;
+  private somentePositivo = false;
+  private somenteNegativo = false;
 
-  // private _$element: HTMLElement;
-  // public get $element(): HTMLElement {
-  //   return this._$element;
-  // }
-  // public set $element(value: HTMLElement) {
-  //   this._$element = value;
+  private $casasDecimais: number;
+  public get casasDecimais(): number {
+    return this.$casasDecimais;
+  }
+  @Input()
+  public set casasDecimais(value: number) {
+    this.$casasDecimais = value;
+  }
 
-  //   $(value).keypress((event) => {
-  //     return this.onKeyPress(event);
-  //   });
-  // }
+  private $ngModel: NgModel;
+  public get ngModel(): NgModel {
+    return this.$ngModel;
+  }
+  public set ngModel(value: NgModel) {
+    this.$ngModel = value;
 
-  // private $casasDecimais: number;
-  // public get casasDecimais(): number {
-  //   return this.$casasDecimais;
-  // }
-  // @Input()
-  // public set casasDecimais(value: number) {
-  //   this.$casasDecimais = value;
-  // }
+    if (value) {
+      value.$parsers.push((text) => {
+        return this.parserSoNumeros(text);
+      });
 
-  // private $ngModel: NgModel;
-  // public get ngModel(): NgModel{
-  //   return this.$ngModel;
-  // }
-  // public set ngModel(value: NgModel) {
-  //   this.$ngModel = value;
+      value.$formatters.push((value: any): any => {
+        return this.formaterSoNumeros(value);
+      });
 
-  //   if (value) {
-  //     value.$parsers.push((text) => {
-  //       return this.parserSoNumeros(text);
-  //     });
+      value.$overrideModelOptions({
+        updateOn: 'blur'
+      });
+    }
+  }
 
-  //     value.$formatters.push((value: any): any => {
-  //       return this.formaterSoNumeros(value);
-  //     });
+  @HostListener('keypress')
+  private onKeyPress(event: KeyboardEvent): boolean {
+    return this.verificadecimais(event);
+  }
 
-  //     value.$overrideModelOptions({
-  //       updateOn: "blur"
-  //     });
-  //   }
-  // }
+  protected verificadecimais(e): boolean {
+    const tecla = getTeclaCodeEvent(e);
+    const separadorDecimal = Globalize.cldr.main('numbers/symbols-numberSystem-latn/decimal');
 
-  // private onKeyPress(event): boolean {
-  //   return this.verificadecimais(event);
-  // }
+    if (this.casasDecimais) {
+      if (separadorDecimal.charCodeAt(0) == tecla && !IsFirefoxControlKeyEvent(e)) {
+        if (this.ngModel.$viewValue.indexOf(separadorDecimal) < 0) {
+          return true;
+        }
+      }
+    }
 
-  // protected verificadecimais(e): boolean {
-  //   var tecla = getTeclaCodeEvent(e);
-  //   var separadorDecimal = Globalize.cldr.main("numbers/symbols-numberSystem-latn/decimal");
+    return this.verificanumeros(e);
+  }
 
-  //   if (this.casasDecimais) {
-  //     if (separadorDecimal.charCodeAt(0) == tecla && !IsFirefoxControlKeyEvent(e)) {
-  //       if (this.ngModel.$viewValue.indexOf(separadorDecimal) < 0) {
-  //         return true;
-  //       }
-  //     }
-  //   }
+  protected verificanumeros(e): boolean {
+    const tecla = getTeclaCodeEvent(e);
 
-  //   return this.verificanumeros(e);
-  // }
+    return IsNumberKeyCode(tecla) || IsControlKeyCode(tecla) || IsFirefoxControlKeyEvent(e);
+  }
 
-  // protected verificanumeros(e): boolean {
-  //   var tecla = getTeclaCodeEvent(e);
+  private formaterSoNumeros(valor) {
+    valor = parseFloat(valor);
+    if (!isNaN(valor)) {
+      return valor.Format(this.casasDecimais);
+    }
+    return '';
+  }
 
-  //   return IsNumberKeyCode(tecla) || IsControlKeyCode(tecla) || IsFirefoxControlKeyEvent(e);
-  // }
+  private parserSoNumeros(text) {
+    if (text) {
+      let valorParsed;
+      if (text.CNum) {
+        valorParsed = text.CNum().Format(this.casasDecimais).CNum();
+      } else {
+        valorParsed = text;
+      }
 
-  // private formaterSoNumeros(valor) {
-  //   valor = parseFloat(valor);
-  //   if (!isNaN(valor)) {
-  //     return valor.Format(this.casasDecimais);
-  //   }
-  //   return "";
-  // }
+      const transformedInput = valorParsed.Format(this.casasDecimais);
 
-  // private parserSoNumeros(text) {
-  //   if (text) {
-  //     var valorParsed;
-  //     if (text.CNum) {
-  //       valorParsed = text.CNum().Format(this.casasDecimais).CNum();
-  //     } else {
-  //       valorParsed = text;
-  //     }
+      if (transformedInput !== text) {
+        this.ngModel.$setViewValue(transformedInput);
+        this.ngModel.$render();
+      }
 
-  //     var transformedInput = valorParsed.Format(this.casasDecimais);
+      return valorParsed;
+    }
+    return undefined;
+  }
 
-  //     if (transformedInput !== text) {
-  //       this.ngModel.$setViewValue(transformedInput);
-  //       this.ngModel.$render();
-  //     }
-
-  //     return valorParsed;
-  //   }
-  //   return undefined;
-  // }
-
-  // constructor() { }
+  constructor(private elementRef: ElementRef) {
+  }
 
 }

@@ -2,7 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
 import { ModalProcuraComponent } from '../../dialogs/modal-procura/modal-procura.component';
 import { IProcura, ProcuraRetorno } from '../../dialogs/modal-procura/iprocura';
-import { MouraService } from 'src/lib/services/moura.service';
+import { MouraService } from '../../../services/moura.service';
 
 @Component({
   selector: 'moura-text-box-procura',

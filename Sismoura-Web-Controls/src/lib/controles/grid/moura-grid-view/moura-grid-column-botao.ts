@@ -1,6 +1,7 @@
 import { EventEmitter } from '@angular/core';
+import { MouraGridColumn } from './moura-grid-column';
 
-class MouraGridColumnBotao extends MouraGridColumn {
+export class MouraGridColumnBotao extends MouraGridColumn {
 
   public click = new EventEmitter();
 
@@ -56,7 +57,7 @@ class MouraGridColumnBotao extends MouraGridColumn {
 
       this.click.emit(args);
 
-      this.mouraGridViewController.$scope.$applyAsync();
+      // this.mouraGridViewController.$scope.$applyAsync();
   }
 
 }

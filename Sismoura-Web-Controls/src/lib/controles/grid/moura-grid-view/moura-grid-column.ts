@@ -1,4 +1,6 @@
-class MouraGridColumn {
+import { MouraGridViewComponent } from './moura-grid-view.component';
+
+export class MouraGridColumn {
   private get instaceDevextreme(): DevExpress.ui.dxDataGrid {
     if (!this.mouraGridViewController || !this.mouraGridViewController.devExtremeGridView) {
       return null;
@@ -7,11 +9,11 @@ class MouraGridColumn {
     return this.mouraGridViewController.devExtremeGridView.instance;
   }
 
-  private $mouraGridViewController: MouraGridViewController;
-  public get mouraGridViewController(): MouraGridViewController {
+  private $mouraGridViewController: MouraGridViewComponent;
+  public get mouraGridViewController(): MouraGridViewComponent {
     return this.$mouraGridViewController;
   }
-  public set mouraGridViewController(value: MouraGridViewController) {
+  public set mouraGridViewController(value: MouraGridViewComponent) {
     this.$mouraGridViewController = value;
 
     this.iniciarColuna();

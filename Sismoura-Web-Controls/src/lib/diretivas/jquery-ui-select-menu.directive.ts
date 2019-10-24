@@ -1,25 +1,27 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, DoCheck, KeyValueDiffer, KeyValueDiffers } from '@angular/core';
 
 @Directive({
   selector: '[jqueryUiSelectMenu]'
   , exportAs: 'jqSelectMenu'
 })
-export class JqueryUiSelectMenuDirective {
+export class JqueryUiSelectMenuDirective implements DoCheck {
 
-  // private instanceSelectmenu: any;
-  // private instanceCombobox: any;
+  private dataSourceDiffer: KeyValueDiffer<string, any>;
 
-  // public get select(): HTMLSelectElement {
-  //   return this.elementRef.nativeElement;
-  // }
+  private instanceSelectmenu: any;
+  private instanceCombobox: any;
 
-  // public get focusIndex(): number {
-  //   if (this.instanceSelectmenu) {
-  //     return this.instanceSelectmenu.focusIndex;
-  //   } else if (this.instanceCombobox) {
-  //     return 0;
-  //   }
-  // }
+  public get select(): HTMLSelectElement {
+    return this.elementRef.nativeElement;
+  }
+
+  public get focusIndex(): number {
+    if (this.instanceSelectmenu) {
+      return this.instanceSelectmenu.focusIndex;
+    } else if (this.instanceCombobox) {
+      return 0;
+    }
+  }
 
   // private $ngModel: angular.INgModelController;
   // public get ngModel(): angular.INgModelController {
@@ -29,11 +31,11 @@ export class JqueryUiSelectMenuDirective {
   //   this.$ngModel = value;
 
   //   if (value) {
-  //     this._ngModel.$viewChangeListeners.push(() => {
+  //     this.$ngModel.$viewChangeListeners.push(() => {
   //       this.onViewChange();
   //     });
 
-  //     this._ngModel.$validators.select = (model, view) => {
+  //     this.$ngModel.$validators.select = (model, view) => {
   //       if (model || this.select.hasEmptyOption || (!this.select.emptyOption && this.select.unknownOption)) {
   //         this.refresh();
   //       }
@@ -44,53 +46,52 @@ export class JqueryUiSelectMenuDirective {
   //   this.refresh();
   // }
 
-  // public constructor(private elementRef: ElementRef, public $timeout: angular.ITimeoutService) {
-  //   if (true) {
-  //     this.instanceCombobox = ($(this.select)).combobox().combobox('instance');
-  //   } else {
-  //     // this.instanceSelectmenu = (<any>$($element)).selectmenu({
-  //     //     change: () => {
-  //     //         this.$element.trigger("change")
-  //     //     }
-  //     // }).selectmenu("instance");
-  //   }
+  public constructor(private elementRef: ElementRef, private differs: KeyValueDiffers) {
+    this.dataSourceDiffer = differs.find({}).create<string, any>();
 
-  //   $scope.$watchCollection(() => this.getElementOptions(), () => {
-  //     this.refresh();
-  //   });
-  // }
+    this.instanceCombobox = ($(this.select) as any).combobox().combobox('instance');
+  }
 
-  // public getElementOptions() {
-  //   const retorno = [];
+  ngDoCheck(): void {
+    if (this.select && this.select.options && this.instanceCombobox) {
+      const changes = this.dataSourceDiffer.diff(this.select.options); // check for changes
+      if (changes) {
+        this.refresh();
+      }
+    }
+  }
 
-  //   for (let index = 0; index < this.select.options.length; index++) {
-  //     const option = this.select.options[index];
+  public getElementOptions() {
+    const retorno = [];
 
-  //     retorno.push(option.value);
-  //   }
+    for (let index = 0; index < this.select.options.length; index++) {
+      const option = this.select.options[index];
 
-  //   return retorno;
-  // }
+      retorno.push(option.value);
+    }
 
-  // public refresh() {
-  //   if (this.instanceSelectmenu) {
-  //     const ref = () => {
-  //       this.instanceSelectmenu.element.selectmenu('refresh');
-  //     }
+    return retorno;
+  }
 
-  //     if (this.instanceSelectmenu.menuItems) {
-  //       ref();
-  //     } else {
-  //       this.$timeout(() => {
-  //         ref();
-  //       });
-  //     }
-  //   } else if (this.instanceCombobox) {
-  //     if (this.select.selectedOptions[0]) {
-  //       $(this.instanceCombobox.input).val(this.select.selectedOptions[0].text);
-  //     }
-  //   }
-  // }
+  public refresh() {
+    if (this.instanceSelectmenu) {
+      const ref = () => {
+        this.instanceSelectmenu.element.selectmenu('refresh');
+      }
+
+      if (this.instanceSelectmenu.menuItems) {
+        ref();
+      // } else {
+      //   this.$timeout(() => {
+      //     ref();
+      //   });
+      }
+    } else if (this.instanceCombobox) {
+      if (this.select.selectedOptions[0]) {
+        $(this.instanceCombobox.input).val(this.select.selectedOptions[0].text);
+      }
+    }
+  }
 
   // public onViewChange() {
   //   this.$timeout(() => {

@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input } from '@angular/core';
 import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
-import { MouraService } from 'src/lib/services/moura.service';
+import { MouraService } from '../../../services/moura.service';
 
 @Component({
   selector: 'moura-text-box-cpf',

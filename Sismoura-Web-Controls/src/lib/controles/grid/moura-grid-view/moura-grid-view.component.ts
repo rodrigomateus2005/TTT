@@ -1,13 +1,16 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { MouraControlComponent } from 'sismoura-web-controls/src/lib/controles/core/moura-control/moura-control.component';
+import { Component, OnInit, ElementRef, DoCheck, KeyValueDiffers, KeyValueDiffer } from '@angular/core';
+import { MouraControlComponent } from '../../core/moura-control/moura-control.component';
+import { MouraGridColumn } from './moura-grid-column';
+import { DevExtremeGridViewDirective } from '../../../diretivas/dev-extreme-grid-view.directive';
 
 @Component({
   selector: 'moura-grid-view',
   templateUrl: './moura-grid-view.component.html',
   styleUrls: ['./moura-grid-view.component.scss']
 })
-export class MouraGridViewComponent extends MouraControlComponent {
+export class MouraGridViewComponent extends MouraControlComponent implements DoCheck {
 
+  private dataSourceDiffer: KeyValueDiffer<string, any>;
   private paginacoesPermitidas: number[] = [50, 100, 200];
 
   private $devExtremeGridView: DevExtremeGridViewDirective;
@@ -140,14 +143,19 @@ export class MouraGridViewComponent extends MouraControlComponent {
 
   public onSelecionouLinha: ($options) => void;
 
-  constructor(elementRef: ElementRef) {
+  constructor(elementRef: ElementRef, private differs: KeyValueDiffers) {
     super(elementRef);
 
-    $scope.$watchCollection(() => this.ngDataSource, () => {
-      if (this.devExtremeGridView) {
+    this.dataSourceDiffer = differs.find({}).create<string, any>();
+  }
+
+  ngDoCheck(): void {
+    if (this.devExtremeGridView) {
+      const changes = this.dataSourceDiffer.diff(this.ngDataSource); // check for changes
+      if (changes) {
         this.devExtremeGridView.atualizar();
       }
-    });
+    }
   }
 
   private setInstanceProperty<T>(propriedadeSet: (x: DevExtremeGridViewDirective) => void): void {
