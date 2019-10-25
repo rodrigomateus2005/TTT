@@ -1,8 +1,0 @@
-<moura-campo [base]="ctrl">
-  <content>
-      <select [(ngModel)]="ngModelMoura" jqueryUiSelectMenu #jqueryselect="jqSelectMenu">
-          <option *ngIf="permiteNulo || !ngModelMoura" [value]="null">{{preparaTextNull()}}</option>
-          <option *ngFor="let item of ngDataSource" [value]="preparaValue(item)">{{preparaText(item)}}</option>
-      </select>
-  </content>
-</moura-campo>

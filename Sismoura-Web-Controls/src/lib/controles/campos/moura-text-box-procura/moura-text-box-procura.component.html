@@ -1,9 +1,0 @@
-<moura-campo [base]="ctrl">
-  <content>
-      <input type="text" [(ngModel)]="ngModelMouraCodigo"  ng-model-options="{ updateOn: 'blur' }" (keydown)="onKeyDown($event)" />
-      <button type="button" (click)="abrirProcura('')">Procurar</button>
-      <span>{{ngModelMouraLabel}}</span>
-
-      <modal-procura #modalProcura [engine]="engine"></modal-procura>
-  </content>
-</moura-campo>

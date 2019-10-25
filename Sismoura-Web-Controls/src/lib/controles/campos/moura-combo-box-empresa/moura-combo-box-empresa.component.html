@@ -1,7 +1,0 @@
-<moura-campo base="$ctrl">
-  <content>
-      <select ng-options="$ctrl.ctrl.preparaValue(item) as $ctrl.ctrl.preparaText(item) for item in $ctrl.ctrl.ngDataSource" ng-model="$ctrl.ctrl.ngModelMoura" jquery-ui-select-menu>
-          <option ng-if="$ctrl.ctrl.permiteNulo || !$ctrl.ctrl.ngModelMoura" value="">{{$ctrl.ctrl.preparaTextNull()}}</option>
-      </select>
-  </content>
-</moura-campo>
