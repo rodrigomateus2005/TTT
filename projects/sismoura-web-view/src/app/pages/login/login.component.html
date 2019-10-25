@@ -1,0 +1,62 @@
+<moura-page [base]="ctrl">
+    <span content class="view-panel">
+        <link href="Css/login.css?v=3" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="Css/text-security/text-security.css">
+
+        <style type="text/css">
+            .txtSe {
+                -webkit-text-security: disc;
+                -mox-text-security: disc;
+                text-security: disc;
+                font-family: text-security-disc;
+            }
+        </style>
+
+        <div id="loginContent" class="loginContent">
+            <h1>
+                <span traduzir>Acesso</span>
+                <img alt="Logo SisMoura" src="Images/LogNeg.png" class="imgLogoLogin" />
+            </h1>
+            <div class="loginAlign">
+                <img alt="Usuário" class="label" src="Images/imgUser.png" width="67" height="67" />
+                <input type="text" id="txtUsuario" name="systemuser" maxlength="100" [(ngModel)]="usuario" />
+            </div>
+            <div class="clear"></div>
+            <br />
+            <div class="loginAlign">
+                <img alt="Senha" class="label" src="Images/imgPass.png" width="67" height="67" />
+                <input type="text" id="txtSenha" name="senha" class="txtSe" maxlength="6" [(ngModel)]="senha" onkeydown="return (!((event.keyCode>=65 && event.keyCode <= 95) || event.keyCode >= 106) && event.keyCode!=32);" autocomplete="off" />
+            </div>
+            <div class="clear"></div>
+            <br />
+            <div class="loginAlign">
+                <!--<asp:RadioButtonList ID="rdbMetodoLogin" runat="server" CssClass="invisible">
+    </asp:RadioButtonList>
+
+    <moura-radio-button-list ng-model-moura="$ctrl.tipoSelecionado" ng-data-source="$ctrl.tipos" value-field="Tipo" text-field="Text"></moura-radio-button-list>-->
+            </div>
+            <br />
+            <div class="loginAlign">
+                <button type="button" id="btnEntrar" traduzir (click)="clickLogin()">Entrar</button>
+                <!--<asp:Button runat="server" Text="Registrar" ID="btnRegistrar" CssClass="invisible" />
+            <asp:Button runat="server" Text="Logins" ID="btnLogins" CssClass="invisible" />-->
+            </div>
+        </div>
+
+        <!-- <center>
+            <div>
+                <cc1:MouraListBox runat="server" ID="lstBanco" TamanhoCampo="Gigante" Altura="60" LabelNoTopo="true">
+                </cc1:MouraListBox>
+            </div>
+        </center> -->
+
+        <moura-modal titulo="Selecione a empresa padrão" #modalSelecaoEmpresa="mouraModal">
+            <!-- Width="500px" Height="300px" -->
+            <content>
+                <moura-combo-box-empresa label="Empresa" [(ngModelMoura)]="empresaPadrao" value-field="Codigo"></moura-combo-box-empresa>
+                <br />
+                <moura-button text="Selecionar" (mouraClick)="selecionarEmpresa()"></moura-button>
+            </content>
+        </moura-modal>
+    </span>
+</moura-page>

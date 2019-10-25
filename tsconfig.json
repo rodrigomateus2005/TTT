@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "references": [
+    {
+      "path": "../",
+      "prepend": true
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types",
+      "types-sismoura"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "sismoura-web-controls": [
+        "dist/sismoura-web-controls"
+      ],
+      "sismoura-web-controls/*": [
+        "dist/sismoura-web-controls/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

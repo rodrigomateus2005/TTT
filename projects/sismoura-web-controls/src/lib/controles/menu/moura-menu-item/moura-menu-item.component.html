@@ -1,0 +1,15 @@
+<moura-control [base]="ctrl">
+  <content>
+    <li>
+      <a [href]="urlMenu" (click)="clickMenu()" [class]="nivelCss">
+        <img alt="menu" [src]="icone" *ngIf="icone" />
+        {{menu.Titulo}}
+      </a>
+      <ul *ngIf="temFilhos && aberto">
+        <span *ngFor="let menuFilho of menu.MenusFilhos">
+          <moura-menu-item [menu]="menuFilho"></moura-menu-item>
+        </span>
+      </ul>
+    </li>
+  </content>
+</moura-control>

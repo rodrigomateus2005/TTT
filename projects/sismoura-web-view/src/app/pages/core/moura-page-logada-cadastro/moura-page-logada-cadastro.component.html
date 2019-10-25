@@ -1,0 +1,18 @@
+<moura-page-logada [base]="ctrl">
+  <span botoesTop>
+    <li>
+      <a class="botaoTopo" title="Configurar Tela" style="background-image: url('Images/gear.png')"></a>
+    </li>
+  </span>
+  <span content>
+    <div ng-transclude="[content]">
+    </div>
+  </span>
+  <span rodape>
+    <moura-button (mouraClick)="clickGravar()" text="Gravar"></moura-button>
+    <moura-button (mouraClick)="clickExcluir()" text="Excluir"></moura-button>
+    <moura-button (mouraClick)="clickLimpar()" text="Limpar"></moura-button>
+    <ng-content select="[rodape]">
+    </ng-content>
+  </span >
+</moura-page-logada>

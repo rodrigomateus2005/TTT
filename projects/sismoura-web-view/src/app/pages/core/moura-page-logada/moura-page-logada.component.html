@@ -1,0 +1,105 @@
+<moura-page [base]="ctrl">
+  <span content class="view-panel">
+    <div id="top">
+      <div class="fixed">
+        <a href="http://www.jnmoura.com.br" target="_blank" class="hidden-xs hidden-sm">
+          <div id="Relogio" class="separacaoRelogio">
+            <div class="relogioGRD">
+              <div class="hora">
+                <p>Segunda-Feira, 24/02/2015</p>
+                <p>11:32</p>
+              </div>
+              <div class="logo">
+                <img alt="Logo Moura" runat="server" id="imgGrande" src="Images/logoRelGra.png" />
+              </div>
+            </div>
+            <div class="relogioPQN">
+              <div class="hora">
+                <p class="hora_relogio">09:32</p>
+              </div>
+              <div class="logo">
+                <img alt="Logo Moura" runat="server" id="imgPequena" ser="Images/logoRelPeq.png" />
+              </div>
+            </div>
+          </div>
+        </a>
+        <ul id="divBotoesTopo" class="top-menu">
+          <li>
+            <a class="botaoTopo" title="Abrir / Fechar Menu" style="background-image: url('Images/btnMenu.png')"
+              ng-click="$ctrl.ctrl.toggleMenu()"></a>
+          </li>
+          <li>
+            <a class="botaoTopo" title="Sair" style="background-image: url('Images/btnSairDois.png')"
+              ng-click="$ctrl.ctrl.clickDeslogar()"></a>
+          </li>
+          <li>
+            <a class="botaoTopo" title="Início" style="background-image: url('Images/btnHome.png')"
+              href="Principal"></a>
+          </li>
+          <li>
+            <a class="botaoTopo" title="Ajuda" style="background-image: url('Images/help.png')"
+              ng-click="$ctrl.ctrl.abrirAjudaTela()"></a>
+          </li>
+          <ng-content select="[botoesTop]">
+          </ng-content>
+        </ul>
+        <div style="padding-left: 10px; display: inline-block;" class="hidden-xs">
+          <label traduzir>Usuário: </label>
+          <label traduzir>Empresa: </label>
+        </div>
+        <div style="padding-left: 10px; display: inline-block; width: 25%" class="hidden-xs">
+          <label style="font-weight: bold;">{{$ctrl.ctrl.UsuarioNome}}</label>
+          <label style="font-weight: bold;">{{$ctrl.ctrl.UsuarioEmpresa}}</label>
+        </div>
+
+        <!-- Descomentar quando for liberar para homologação -->
+        <!--<div style="padding-left: 10px; display: inline-block;" class="hidden-xs">
+                  <label id="lblHomologacao" style="font-weight: bold; color:#FF0000; font-size:250%;">HOMOLOGAÇÃO</label>
+              </div>-->
+      </div>
+    </div>
+
+    <div id="container">
+      <div id="sidebar" style="height: 100%; overflow: auto" ng-show="$ctrl.ctrl.isMenuAberto">
+        <div class="sidebar-tabs">
+          <ul class="tabs-nav">
+            <li><a href="#general" title=""><i class="icon-reorder"></i></a></li>
+          </ul>
+          <moura-menu></moura-menu>
+        </div>
+      </div>
+
+      <div id="content" style="height: 100%; overflow: auto">
+        <div class="wrapper">
+
+          <div class="crumbs">
+            <p class="align-center" style="padding-top: 5px;">
+              <span class="star">
+                <input type="checkbox" id="favorito" class="star-input" />
+                <label for="favorito" class="star-label" id="labelFavorito"></label>
+              </span>
+
+              <span id="titulo" class="tituloPagina" traduzir>{{ctrl.titulo}}</span>
+            </p>
+          </div>
+
+          <fieldset>
+            <div class="widget row-fluid">
+              <div class="well">
+
+                <ng-content select="[content]">
+                </ng-content>
+
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <ng-content select="[rodape]">
+      </ng-content>
+    </div>
+  </span>
+</moura-page>

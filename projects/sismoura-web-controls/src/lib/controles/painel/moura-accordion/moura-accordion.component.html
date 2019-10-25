@@ -1,0 +1,14 @@
+<div class="accordionGeral">
+  <a class="accordionCabecalho" ng-click="$ctrl.toggle()">
+      <div class="accordionDivCabecalho" style="width: 100%;">
+          <label class="accordionTitulo">
+              {{ $ctrl.titulo }}
+          </label>
+          <label class="accordionMais">
+              {{ $ctrl.maisMenos }}
+          </label>
+          <hr />
+      </div>
+  </a>
+  <div ng-transclude="content" style="height: 100%;" ng-show="$ctrl.expandido"></div>
+</div>
