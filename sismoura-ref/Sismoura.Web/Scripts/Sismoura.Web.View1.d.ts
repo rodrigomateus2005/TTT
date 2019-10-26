@@ -1,12 +1,4 @@
-﻿
- 
- 
-
- 
-
-/// <reference path="EnumsView.ts" />
-
-declare module SiSMoura.Core.Common {
+﻿declare module SiSMoura.Core.Common {
 	interface Configuracoes_Fiscal extends SiSMoura.Core.Common.Entity {
 		Acrescimo_Outras_Despesas: boolean;
 		Adicionar_Classificacao_Dados_Adicionais: boolean;
@@ -15598,4 +15590,4 @@ declare module System.Drawing.Imaging {
 }
 
 
- 
+

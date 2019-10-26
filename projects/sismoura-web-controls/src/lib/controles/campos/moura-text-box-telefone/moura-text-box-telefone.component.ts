@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
 import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
 import { MouraService } from '../../../services/moura.service';
 
@@ -8,6 +8,24 @@ import { MouraService } from '../../../services/moura.service';
   styleUrls: ['./moura-text-box-telefone.component.scss']
 })
 export class MouraTextBoxTelefoneComponent extends MouraCampoComponent {
+
+  private $ngModelMouraDdd;
+  public get ngModelMouraDdd(): any {
+    return this.$ngModelMouraDdd;
+  }
+  @Input()
+  public set ngModelMouraDdd(value: any) {
+    this.$ngModelMouraDdd = value;
+  }
+
+  private $ngModelMouraTelefone;
+  public get ngModelMouraTelefone(): any {
+    return this.$ngModelMouraTelefone;
+  }
+  @Input()
+  public set ngModelMouraTelefone(value: any) {
+    this.$ngModelMouraTelefone = value;
+  }
 
   public constructor(public mouraService: MouraService) {
     super();

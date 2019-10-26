@@ -20,6 +20,7 @@
 /// <reference path="../SiSMoura.Web.Common/TypeScriptReferences/toastr.d.ts" />
 /// <reference path="../SiSMoura.Web.Common/TypeScriptReferences/ua-parser.d.ts" />
 
+/// <reference path="../Sismoura.Web/Scripts/EnumsView.d.ts" />
 /// <reference path="../Sismoura.Web/Scripts/Sismoura.Web.View1.d.ts" />
 /// <reference path="../Sismoura.Web/Script/URLTela.d.ts" />
 /// <reference path="../Sismoura.Web/Classes/MouraPageAngular.d.ts" />

@@ -11,8 +11,8 @@ export class MouraGridColumnBotaoSelecionar extends MouraGridColumnBotao {
   }
 
   protected onClick(container, options) {
-      if (this.mouraGridViewController.onSelecionouLinha) {
-          this.mouraGridViewController.onSelecionouLinha({ $options: options });
+      if (this.mouraGridViewController.selecionouLinha) {
+          this.mouraGridViewController.selecionouLinha.emit({ $options: options });
       }
 
       // this.mouraGridViewController.$scope.$applyAsync();

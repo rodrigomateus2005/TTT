@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MouraPageLogadaComponent } from '../moura-page-logada/moura-page-logada.component';
-import { MouraService } from 'sismoura-web-controls/src/lib/services/moura.service';
+import { MouraService } from 'sismoura-web-controls';
 
 @Component({
   selector: 'moura-page-logada-cadastro',
@@ -24,7 +24,8 @@ export class MouraPageLogadaCadastroComponent extends MouraPageLogadaComponent {
 
     this.ctrlCadastro.limpar();
 
-    // (<angular.IScope>$scope).$watch(() => (this.ctrlCadastro.entity && this.ctrlCadastro.campoCodigo) ? this.ctrlCadastro.entity[this.campoCodigo] : null, (newValue, oldValue) => {
+    // (<angular.IScope>$scope).$watch(() => (this.ctrlCadastro.entity &&
+    // this.ctrlCadastro.campoCodigo) ? this.ctrlCadastro.entity[this.campoCodigo] : null, (newValue, oldValue) => {
     //   this.onCodigoChanged(newValue, oldValue);
     // });
   }

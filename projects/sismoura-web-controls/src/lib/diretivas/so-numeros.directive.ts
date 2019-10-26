@@ -20,7 +20,7 @@ export class SoNumerosDirective {
   }
 
   @HostListener('keypress', ['$event'])
-  private onKeyPress(event: KeyboardEvent): boolean {
+  public onKeyPress(event: KeyboardEvent): boolean {
     return this.verificadecimais(event);
   }
 

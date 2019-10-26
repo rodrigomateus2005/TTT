@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MouraPageComponent } from '../core/moura-page/moura-page.component';
-import { MouraModalComponent } from '../../../controls/controles/dialogs/moura-modal/moura-modal.component';
-import { MouraService } from '../../../controls/services/moura.service';
+import { MouraModalComponent } from 'sismoura-web-controls/lib/controles/dialogs/moura-modal/moura-modal.component';
+import { MouraService } from 'sismoura-web-controls';
 
 @Component({
   selector: 'app-login',

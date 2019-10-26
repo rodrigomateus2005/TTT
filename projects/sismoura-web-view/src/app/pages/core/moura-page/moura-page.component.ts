@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MouraService } from 'sismoura-web-controls/src/lib/services/moura.service';
-import { TamanhosCampo } from 'sismoura-web-controls/src/lib/controles/campos/moura-campo/moura-campo.component';
+import { MouraService, TamanhosCampo } from 'sismoura-web-controls';
 
 @Component({
   selector: 'moura-page',

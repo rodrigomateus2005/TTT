@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MouraPageComponent } from '../moura-page/moura-page.component';
-import { MouraService } from 'sismoura-web-controls/src/lib/services/moura.service';
+import { MouraService } from 'sismoura-web-controls';
 
 @Component({
   selector: 'moura-page-logada',
