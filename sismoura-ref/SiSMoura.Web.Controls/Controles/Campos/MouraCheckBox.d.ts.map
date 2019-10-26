@@ -1,0 +1,1 @@
+{"version":3,"file":"MouraCheckBox.d.ts","sourceRoot":"","sources":["../../../../../SiSMoura.Web.Controls/Controles/Campos/MouraCheckBox.ts"],"names":[],"mappings":"AACA,cAAM,aAAc,SAAQ,UAAU;IAE3B,YAAY,EAAE,iBAAiB,CAAC;aAEnC,KAAK,EAAI,gBAAgB;aAIzB,OAAO,EAAI,cAAc;IAIzB,OAAO,EAAI,OAAO;IAclB,IAAI,EAAI,MAAM;gBA8BN,EAAE,EAAE,MAAM;IAMtB,SAAS,CAAC,cAAc;IAUxB,SAAS,CAAC,cAAc;CAG3B"}

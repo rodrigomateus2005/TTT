@@ -1,0 +1,40 @@
+declare class C_TriFLo extends MouraPageAngular {
+    readonly GridProdutos: MouraGridViewJS;
+    readonly btnGerar: MouraButton;
+    readonly btnConsultarTributacao: MouraButton;
+    readonly mdIntegracao: MouraModal;
+    readonly mdComparacao: MouraModal;
+    readonly GridIntegracao: MouraGridViewJS;
+    readonly grdComparacao: MouraGridViewJS;
+    readonly btnAtualizar: MouraButton;
+    readonly btnNaoEncontrados: MouraButton;
+    readonly lblLocalizados: MouraLabel;
+    readonly lblNaoLocalizados: MouraLabel;
+    readonly lstGrupo: MouraCheckBoxList;
+    readonly lstSubGrupo: MouraCheckBoxList;
+    readonly lstUF: MouraCheckBoxList;
+    readonly cboEmpresa: MouraComboBoxEmpresa;
+    readonly btnComparacao: MouraButton;
+    readonly btnOk: MouraButton;
+    private retorno;
+    private produtos;
+    private empresaUF;
+    private comparacao;
+    protected Init(): void;
+    OnPageLoad(): void;
+    protected OnClickOk(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickComparacao(s: MouraButton, e: MouraClickEventArgs): void;
+    protected OnClickGerar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickConsultarTributacao(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected PreencherRetornos(r: any[]): void;
+    protected PreencherProdutos(p: any): void;
+    protected OnClickAtualizar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected GetEmpresaUF(): void;
+    protected OnClickNaoEncontrados(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected LimparCampos(): void;
+    protected atualizarLegendas(): void;
+    protected OnGridIntegracaoCellPrepared(s: any, e: MouraGridViewJSCellPreparedEventArgs): void;
+    protected OnGridComparacaoCellPrepared(s: any, e: MouraGridViewJSCellPreparedEventArgs): void;
+}
+declare var c_TriFLo: C_TriFLo;
+//# sourceMappingURL=C_TriFLo.d.ts.map

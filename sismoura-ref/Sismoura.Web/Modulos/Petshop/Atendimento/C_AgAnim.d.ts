@@ -1,0 +1,45 @@
+declare class C_AgAnim extends MouraPageRelacaoAngular {
+    readonly AccordionFiltros: MouraAccordion;
+    readonly Grid: MouraGridViewJS;
+    readonly txtData: MouraTextBoxData;
+    readonly txtProprietario: MouraTextBoxProcura;
+    readonly txtProfissional: MouraTextBoxProcura;
+    readonly txtGrupo: MouraTextBoxProcura;
+    readonly txtServico: MouraTextBoxProcura;
+    readonly cboEmpresa: MouraComboBoxEmpresa;
+    readonly lstTipoHora: MouraRadioButtonList;
+    readonly accFiltro: MouraAccordion;
+    readonly btnNovo: MouraButton;
+    readonly btnHistoricoImprimirMatricial: MouraButton;
+    readonly btnHistoricoVisualizarWord: MouraButton;
+    readonly mdHistoricoCompleto: MouraModal;
+    readonly txtHistorico: MouraTextBox;
+    readonly btnTicket: MouraButton;
+    readonly btnParticipante: MouraButton;
+    readonly hdnServico: HTMLInputElement;
+    readonly hdnServicoAtendimento: HTMLInputElement;
+    protected LimparCampos(): void;
+    OnPageLoad(): void;
+    protected Init(): void;
+    PreencherGrade(): void;
+    GerarGrade(): void;
+    protected OnGerougrade(d: any): void;
+    protected OnErrorGerarGrade(erro: JQueryXHR): void;
+    protected ValidarCampos(): boolean;
+    protected OnGridRowValidating(s: any, e: any): void;
+    protected AlterarObservacao(codServicoAtendimento: number, novaObservacao: string): string;
+    protected AlterarProfissional(codServicoAtendimento: number, codNovoProfissional: number): string;
+    protected OnGridCellPrepared(s: any, e: MouraGridViewJSCellPreparedEventArgs): void;
+    protected OnGridSelecionouLinha(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected OnGridClicouBotao(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected ConcluirServico(codServico: number): void;
+    protected OnSelecionouOpcaoConcluir(e: MsgBoxResultEventArgs): void;
+    protected OnClickBtnNovo(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected HistoricoCompletoAnimal(codAnimal: number): void;
+    protected OnClickHistoricoImprimirMatricial(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickHistoricoImprimirWord(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickImprimirTicket(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnAntesAbrirProcuraProfissional(s: any, e: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+}
+declare var c_AgAnim: C_AgAnim;
+//# sourceMappingURL=C_AgAnim.d.ts.map

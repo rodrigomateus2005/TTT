@@ -1,0 +1,1 @@
+{"version":3,"file":"C_CfgCom.d.ts","sourceRoot":"","sources":["../../../../../Modulos/Financeiro/ContaCorrente/C_CfgCom.ts"],"names":[],"mappings":"AAAA,cAAM,QAAS,SAAQ,SAAS;aAExB,gBAAgB,EAAI,mBAAmB;aAIvC,gBAAgB,EAAI,uBAAuB;IAI/C,SAAS,CAAC,IAAI;IAYd,SAAS,CAAC,gCAAgC,CAAC,CAAC,EAAE,GAAG,EAAE,CAAC,EAAE,6CAA6C;IAYnG,SAAS,CAAC,2BAA2B,IAAI,IAAI;CA+BhD;AAED,QAAA,MAAM,QAAQ,UAAiB,CAAA"}

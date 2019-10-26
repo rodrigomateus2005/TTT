@@ -1,0 +1,40 @@
+declare class C_Promis extends MouraPageAngular {
+    Entity: SiSMoura.Core.Entity.PromissoriaRetorno;
+    Impressao: any;
+    readonly btnGravar: MouraButton;
+    readonly btnExcluir: MouraButton;
+    readonly btnImprimir: MouraButton;
+    readonly btnImprimirConfig: MouraButton;
+    readonly btnSelecionar: MouraButton;
+    readonly btnOk: MouraButton;
+    readonly btnCancelar: MouraButton;
+    readonly mdModelo: MouraModal;
+    readonly txtVenda: MouraTextBoxProcura;
+    readonly cboEmpresa: MouraComboBoxEmpresa;
+    readonly lblOrcamento: MouraLabel;
+    readonly grid: MouraGridViewJS;
+    OnPageLoad(): void;
+    Init(): void;
+    private LimparCampos;
+    private LimparCamposImpressao;
+    private MudouImpressao;
+    private OnProcurouVenda;
+    private PreencherGrade;
+    private OnClickSelecionar;
+    private OnCellPrepared;
+    private OnClickGravar;
+    private GravarPromissoriaAgrupada;
+    private GravarPromissoria;
+    private ImprimirPromissoriaAgrupada;
+    private ImprimirPromissorias;
+    private ImprimirConfigurado;
+    private OnClickExcluir;
+    private ExcluirPromissorias;
+    private OnClickImprimir;
+    private OnClickImprimirConfig;
+    private OnClickCancelar;
+    private OnClickOk;
+    private OnRowValidating;
+}
+declare const c_Promis: C_Promis;
+//# sourceMappingURL=C_Promis.d.ts.map

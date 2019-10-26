@@ -1,0 +1,40 @@
+declare class C_ForcaVen extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Console_ForcaVenda> {
+    lblUsuarioInseriu: MouraLabel;
+    readonly lstCamposCliente: MouraCheckBoxList;
+    readonly lstCamposProduto: MouraCheckBoxList;
+    lblUsuarioAlterou: MouraLabel;
+    lblDataInseriu: MouraLabel;
+    lblDataAlterou: MouraLabel;
+    readonly grdDispositivos: MouraGridViewJSEditavel;
+    Dispositivo: SiSMoura.Core.Entity.Console_ForcaVenda_Dispositivo;
+    Dispositivos: any[];
+    Campos: any[];
+    Campo: any;
+    readonly mdDispositivo: MouraModal;
+    readonly txtDescDispositivo: MouraTextBox;
+    readonly txtPDVDispositivo: MouraTextBox;
+    readonly txtDeposito: MouraTextBox;
+    readonly txtCasasDecValor: MouraTextBox;
+    readonly txtCasasDecQtde: MouraTextBox;
+    readonly btnAddDispositivo: MouraButton;
+    readonly btnFechar: MouraButton;
+    protected Init(): void;
+    OnPageLoad(): void;
+    protected OnSelecionouLinha(): void;
+    protected OnLimpouLinha(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected OnValidandoLinha(s: any, e: MouraGridViewJSEditavelItemValidandoEventArgs): void;
+    protected OnAlterouItemLinha(s: any, e: MouraGridViewJSEditavelItemEventArgs): void;
+    protected OnClickbtnAddDispositivo(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickbtnFechar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnDepoisGravar(): boolean;
+    protected OnDepoisBuscarExistente(Entity: SiSMoura.Core.Entity.Console_ForcaVenda): void;
+    protected codigosCliente: any[];
+    protected codigosProduto: any[];
+    protected PreencherCampos(campos: SiSMoura.Core.Entity.Console_ForcaVenda_Campo[]): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Console_ForcaVenda): void;
+    protected LimparDispositivo(dispositivo: SiSMoura.Core.Entity.Console_ForcaVenda_Dispositivo): void;
+    protected OnAntesGravar(): boolean;
+    protected AtualizarLabels(Entity: SiSMoura.Core.Entity.Console_ForcaVenda): void;
+}
+declare var c_ForcaVen: C_ForcaVen;
+//# sourceMappingURL=C_ForcaVen.d.ts.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"G_Analis.d.ts","sourceRoot":"","sources":["../../../../../Modulos/Vendas/Analise/G_Analis.ts"],"names":[],"mappings":"AAAA,cAAM,QAAS,SAAQ,gBAAgB;IAC/B,MAAM,EAAI,GAAG;aAYb,cAAc,EAAI,kBAAkB;aAIpC,UAAU,EAAI,oBAAoB;aAIlC,QAAQ,EAAI,WAAW;IAIpB,UAAU;IASV,IAAI;IAQX,OAAO,CAAC,iBAAiB;IAczB,OAAO,CAAC,YAAY;IAQpB,OAAO,CAAC,kBAAkB;CA2C7B;AAED,QAAA,MAAM,QAAQ,UAAiB,CAAC"}

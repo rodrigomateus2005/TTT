@@ -1,0 +1,61 @@
+declare class MouraListBoxEmpresa extends MouraCampo {
+    SelectionChanged: MouraEventHandler;
+    BlurProcura: MouraEventHandler;
+    KeyupProcura: MouraEventHandler;
+    AntesAbrirProcuraEmpresa: MouraGenericEventHandler<any, MouraListBoxEmpresaAbriuProcuraEventArgs>;
+    private _AutoPostBack;
+    AutoPostBack: boolean;
+    readonly Lista: HTMLElement;
+    readonly PainelList: HTMLElement;
+    private readonly SelectorJQuery;
+    readonly txtProcura: HTMLInputElement;
+    readonly CheckBoxList: JQuery;
+    readonly btnMarcar: DevExpress.Web.Scripts.ASPxClientButton;
+    readonly btnDesmarcar: DevExpress.Web.Scripts.ASPxClientButton;
+    readonly btnProcurar: MouraButton;
+    readonly mdProcuraEmpresa: MouraModal;
+    readonly grdProcuraEmpresa: MouraGridViewJS;
+    readonly btnOKModal: MouraButton;
+    readonly btnAtualizar: MouraButton;
+    readonly txtCEP: MouraTextBoxCep;
+    readonly txtEndereco: MouraTextBox;
+    readonly btnCancelarModal: MouraButton;
+    readonly dvConteudoModal: HTMLDivElement;
+    LimparSelecao(): void;
+    SelecionarEmpresaPadraoUsuario(): void;
+    GetValues(): string[];
+    GetTexts(): string[];
+    GetValuesNumber(): number[];
+    GetValuesRelacao(): string[];
+    GetValuesRelacaoNumber(): number[];
+    GetAllValues(): number[];
+    SetValues(values: Array<string>): void;
+    constructor(id: string);
+    protected IniciarEventos(): void;
+    protected OnClickMarcar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickDesmarcar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnListChanged(): void;
+    protected OnListProcuraBlur(): void;
+    protected OnListProcuraKeyup(): void;
+    protected OnBlurProcura(e: any): void;
+    protected OnKeyupProcura(e: any): void;
+    Limpar(): void;
+    procurarItemLista(): void;
+    IsValido(): boolean;
+    protected OnClickProcurar(s: MouraButton, e: MouraClickEventArgs): void;
+    protected OnClickAtualizarModal(s: MouraButton, e: MouraClickEventArgs): void;
+    protected AtualizarGradeModal(): void;
+    protected CorrigirTamanhoDiv(): void;
+    protected OnClickCancelarModal(s: MouraButton, e: MouraClickEventArgs): void;
+    protected OnClickOKModal(s: MouraButton, e: MouraClickEventArgs): void;
+    protected PreencherEmpresasModal(empresas: number[]): void;
+    protected OnPesquisouCEP(s: any, e: MouraTextBoxCepPesquisouEventArgs): void;
+    Preencher(codigoUsuario?: number, regioes?: string, estados?: string, cidades?: string): void;
+    AdicionarItem(texto: string, valor: any): void;
+    RemoverTodosItens(remover: boolean): void;
+}
+declare class MouraListBoxEmpresaAbriuProcuraEventArgs extends MouraEventArgs {
+    EnderecoPesquisa: string;
+    CepPesquisa: string;
+}
+//# sourceMappingURL=MouraListBoxEmpresa.d.ts.map

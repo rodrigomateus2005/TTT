@@ -1,0 +1,42 @@
+declare class C_Cotac extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Cotacao> {
+    Produto: any;
+    Produtos: any[];
+    readonly Grid: MouraGridViewJSEditavel;
+    readonly txtProduto: MouraTextBoxProcura;
+    readonly txtPrazo: MouraTextBox;
+    readonly txtQtde: MouraTextBox;
+    readonly txtValorUnitario: MouraTextBox;
+    readonly txtMensagem: MouraTextBox;
+    readonly txtEmail: MouraTextBox;
+    readonly btnEnviarEmail: MouraButton;
+    readonly btnEnviar: MouraButton;
+    readonly btnCancelar: MouraButton;
+    readonly txtCodigo: MouraTextBoxProcura;
+    readonly txtFornecedor: MouraTextBoxProcura;
+    readonly txtFornecedorEmail: MouraTextBoxProcura;
+    readonly mdEmail: MouraModal;
+    readonly cboRemetente: MouraComboBox;
+    readonly chkSemValores: MouraCheckBox;
+    readonly txtSolicitacao: MouraTextBoxProcura;
+    protected Init(): void;
+    OnPageLoad(): void;
+    protected OnProcurouSolicitacao(): void;
+    protected OnSelecionouItem(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    private digitouProcura;
+    protected OnKeyPressProduto(): void;
+    protected OnProcurouProduto(): void;
+    protected OnClickEnviar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickCancelar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickEnviarEmail(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnValidando(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected OnRepostaQuantidade(result: MsgBoxResultEventArgs): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Cotacao): void;
+    protected LimparProduto(): void;
+    protected LimparModal(): void;
+    protected OnDepoisBuscarExistente(Entity: SiSMoura.Core.Entity.Cotacao): void;
+    protected GetCadastrados(): void;
+    protected OnAntesGravar(): boolean;
+    protected OnDepoisGravar(): boolean;
+}
+declare const c_Cotac: C_Cotac;
+//# sourceMappingURL=C_Cotac.d.ts.map

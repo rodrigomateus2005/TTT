@@ -1,0 +1,46 @@
+declare class M_DevCli extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Movimentacao> {
+    private listaLote;
+    private verifica;
+    Itens: SiSMoura.Core.Entity.ItemMovimentacao[];
+    Item: SiSMoura.Core.Entity.ItemMovimentacao;
+    readonly dlgLote: MouraModalLoteJS;
+    LotesInformados: QtdeLoteInformadoJS[];
+    readonly txtProduto: MouraTextBoxProcura;
+    readonly txtDocumento: MouraTextBox;
+    readonly txtResponsavel: MouraTextBoxProcura;
+    readonly txtObservacao: MouraTextBox;
+    readonly cboDeposito: MouraComboBox;
+    readonly cboMotivo: MouraComboBox;
+    readonly lblEstoque: MouraLabel;
+    readonly Grid: MouraGridViewJSEditavel;
+    readonly btnTicket: MouraButton;
+    OnPageLoad(): void;
+    protected Init(): void;
+    private atualizarLabelEstoque;
+    protected OnTextBoxProdutoProcurou(): void;
+    protected OnComboDepositoSelectedIndexChanged(): void;
+    private OnComboMotivoSelectedIndexChanged;
+    protected Limpar(): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Movimentacao): void;
+    protected criarEntidadePersonalizados(Entidade: SiSMoura.Core.Entity.Movimentacao): void;
+    private LimparCamposItens;
+    private ObterMovDescPorCodigo;
+    private VerificaCamposItem;
+    private VerificaObrigatoriedadeCampos;
+    private AdicionarItem;
+    private IsProdutoLote;
+    private ObterDadosEspecificosProduto;
+    private AbrirModalLote;
+    private ProcurouMovimento;
+    protected OnDepoisBuscarExistente(Entity: SiSMoura.Core.Entity.Movimentacao): void;
+    protected OnAntesGravar(): boolean;
+    private PreencherItens;
+    private CarregarItensMovimentacao;
+    private OnClickTicket;
+    private ImprimirTicket;
+    private OnInformouLoteProduto;
+    private CarregarListaLoteProduto;
+    private GetLotesExtenso;
+}
+declare var m_DevCli: M_DevCli;
+//# sourceMappingURL=M_DevCli.d.ts.map

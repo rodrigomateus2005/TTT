@@ -1,0 +1,48 @@
+declare class MouraPageNaoLogada {
+    ValidarCamposObrigatorios(): boolean;
+    TratarManesagemLabel(mensagem: string): string;
+    readonly ParametrosTela: any;
+    GerarKeyStoom(campoInicial: string, valoresCampos: string, campoFinal: string): any;
+    ExcluirAnexos(path: string): void;
+    readonly QueryString: any;
+    protected readonly hdnLoginURL: HTMLInputElement;
+    protected readonly hdnURLPage: HTMLInputElement;
+    readonly Modal: MouraModalDialog;
+    readonly dlgFuncaoAdm: MouraFuncoesAdministrativa;
+    readonly dlgSelecaoImpressora: MouraSelecaoDeImpressora;
+    protected readonly hdnParametrosURL: HTMLInputElement;
+    protected LimparParametrosURL(): void;
+    readonly hdnPermissoesTela: HTMLInputElement;
+    readonly PermissoesTela: Sismoura.Web.View.MouraPagePermissoesTela;
+    readonly dlgTelaModal: MouraTelaModal;
+    readonly ParametrosURL: any;
+    constructor();
+    OnPageLoad(): void;
+    protected validarImendes(): void;
+    protected Init(): void;
+    protected devExpressIniciado: boolean;
+    protected DevExpressInit(): void;
+    ExecutarFuncaoServerSideSynch(nomeFuncao: string, parametros: JSON): any;
+    ExecutarFuncaoServerSideAsynch(nomeFuncao: string, parametros: JSON, funcaoSucesso: (d: any) => void, funcaoErro: (erro: JQueryXHR) => void, context: any): void;
+    ExecutarFuncaoServerSideGETAsynch(nomeFuncao: string, parametros: JSON, funcaoSucesso: (d: any) => void, funcaoErro: (erro: JQueryXHR) => void, context: any): void;
+    private tempImpressao;
+    ImprimirMatricial(chave: string, texto: string): void;
+    private OnDlgSelecaoImpressoraClickOK;
+    protected TratarErroFuncaoAsync(erro: JQueryXHR): void;
+    ImprimirDocumentoWord(itensSubstituir: {}, documento: string, bloquearTela: string): void;
+    ImprimirDocumentoWordAnimal(itensSubstituir: {}, documento: string, bloquearTela: string, nomeDocumento: string): void;
+    ImprimirDocumentoMatricial(conteudo: string, colunas: number): void;
+    ExecutarPluginChrome(nomeFuncao: string, parametros: string): Promise<SiSMoura.Core.Entity.MouraChromeRetorno>;
+    DataServidor(): Date;
+    PrimeiroDiaMes(): Date;
+    ObterDadosPessoa(codCliente: number): SiSMoura.Core.Entity.PessoaBasicoRetorno;
+    ObterDadosProduto(codProduto: number): SiSMoura.Core.Entity.ProdutoBasicoRetorno;
+    StatusExamePadrao(): string;
+    FecharModal(): void;
+    DeserializarJSONEncoded(jsonString: string): any;
+    SerializarJSONEncoded(objeto: any): string;
+    funcaoErro(erro: JQueryXHR): void;
+    EnviarMensagemWhatsApp(mensagem: String, numero: String): void;
+    ProcurarCampos(): void;
+}
+//# sourceMappingURL=MouraPageNaoLogada.d.ts.map

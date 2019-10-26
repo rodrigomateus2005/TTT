@@ -1,0 +1,41 @@
+declare class C_Servi extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Servico> {
+    readonly tab: MouraTabPanel;
+    readonly chkEnviarAplicativo: MouraCheckBox;
+    readonly chkServicoEscala: MouraCheckBox;
+    readonly cboTaxaTributaria: MouraComboBox;
+    readonly cboRaca: MouraComboBox;
+    readonly cboEspecieIG: MouraComboBox;
+    readonly cboTipo: MouraComboBox;
+    readonly Grid: MouraGridViewJS;
+    readonly grdPrecos: MouraGridViewJSEditavel;
+    readonly grdRacas: MouraGridViewJSEditavel;
+    readonly grdIG: MouraGridViewJSEditavel;
+    Precos: SiSMoura.Core.Entity.ProdutoPrecoRetorno[];
+    Racas: SiSMoura.Core.Entity.ServicoRacaRetorno[];
+    Informacoes: SiSMoura.Core.Entity.Animais_Servico_Ig[];
+    Ig: SiSMoura.Core.Entity.Animais_Servico_Ig;
+    Impostos: SiSMoura.Core.Entity.ProdutoRegraImpostoRetorno[];
+    OnPageLoad(): void;
+    protected Init(): void;
+    protected OnAntesGravar(): boolean;
+    protected preencherRegistrosCadastrados(): void;
+    protected PreencherListaPreco(Servico: number): void;
+    protected PreencherListaRacas(Servico: number): void;
+    protected PreencherListaIG(Servico: number): void;
+    protected PreencherListaRegrasImposto(Servico: number): void;
+    protected OnGridClickBotaoLinha(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected OnDepoisGravar(): boolean;
+    protected OnDepoisDeletar(): boolean;
+    protected OnDepoisBuscarExistente(Entidade: SiSMoura.Core.Entity.Servico): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Servico): void;
+    protected OnAlterandoItemListaPreco(s: any, e: MouraGridViewJSEditavelItemValidandoEventArgs): void;
+    protected OnAdicionouItemRaca(s: any, e: MouraGridViewJSEditavelItemEventArgs): void;
+    protected OnValidandoItemIg(s: any, e: MouraGridViewJSEditavelItemValidandoEventArgs): void;
+    protected OnAdicionouItemIG(s: any, e: MouraGridViewJSEditavelItemEventArgs): void;
+    private PreencherEntidadePrecos;
+    private PreencherEntidadeRacas;
+    private PreencherEntidadeIG;
+    private PreencherEntidadeImpostos;
+}
+declare const c_Servi: C_Servi;
+//# sourceMappingURL=C_Servi.d.ts.map

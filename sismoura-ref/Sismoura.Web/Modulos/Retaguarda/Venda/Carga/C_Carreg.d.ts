@@ -1,0 +1,45 @@
+declare class C_Carreg extends MouraPageAngular {
+    Entity: SiSMoura.Core.Entity.Carga;
+    Filtro: any;
+    readonly btnGerar: MouraButton;
+    readonly grid: MouraGridViewJS;
+    readonly accCadastro: MouraAccordion;
+    readonly txtData: MouraTextBoxData;
+    readonly btnTransferir: MouraButton;
+    readonly btnAprovar: MouraButton;
+    readonly btnConcluir: MouraButton;
+    readonly btnCancelar: MouraButton;
+    readonly btnLimpar: MouraButton;
+    readonly cboTransf: MouraComboBox;
+    readonly txtVendaTransf: MouraTextBox;
+    readonly mdTransferencia: MouraModal;
+    readonly btnImprimirResumo: MouraButton;
+    readonly btnImprimirMapa: MouraButton;
+    OnPageLoad(): void;
+    private Limpar;
+    Init(): void;
+    protected PreencherGrade(): void;
+    private Gerar;
+    private ConcatenarDataHora;
+    private GerarCarga;
+    private ValidarCampos;
+    private ValidarPeriodoHora;
+    private VerificaVendaCarga;
+    private OnLostFocusData;
+    private selecionando;
+    private OnSelecionouLinha;
+    private OnClickAprovar;
+    private Aprovar;
+    private OnClickTransferir;
+    private PreencherComboTransf;
+    private ConcluirTransferencia;
+    private VerificaCargaAprovada;
+    private Transferir;
+    private ExcluirVendaCarga;
+    private AtualizarVendaCarga;
+    private OnClickCancelar;
+    private OnClickImprimirResumo;
+    private OnClickImprimirMapa;
+}
+declare const c_Carreg: C_Carreg;
+//# sourceMappingURL=C_Carreg.d.ts.map

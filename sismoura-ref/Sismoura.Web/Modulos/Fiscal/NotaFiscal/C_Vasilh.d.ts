@@ -1,0 +1,40 @@
+declare class C_Vasilh extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Controle_Vasilhame> {
+    readonly cboEmpresa: MouraComboBoxEmpresa;
+    readonly txtNota_Saida: MouraTextBox;
+    readonly lblCliente: MouraLabel;
+    readonly lblClienteNome: MouraLabel;
+    readonly lblData_Saida: MouraLabel;
+    readonly lblValor_Saida: MouraLabel;
+    readonly txtProdutoC: MouraTextBoxProcura;
+    readonly txtClienteProcura: MouraTextBoxProcura;
+    readonly lblCod_ONU: MouraLabel;
+    readonly lblNome: MouraLabel;
+    readonly txtQtde_Retirada: MouraTextBox;
+    readonly txtQtde_Entregue: MouraTextBox;
+    readonly txtSerie: MouraTextBox;
+    Produto: any;
+    Produtos: any[];
+    readonly grid: MouraGridViewJSEditavel;
+    readonly btnNotas: MouraButton;
+    readonly mdNotas: MouraModal;
+    readonly gridProcura: MouraGridViewJS;
+    protected Init(): void;
+    protected OnGridSelecionouItem(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected OntxtClienteProcura(s: MouraTextBoxProcura, e: MouraEventArgs): void;
+    protected OnClickNotas(s: MouraButton, e: MouraClickEventArgs): void;
+    OnPageLoad(): void;
+    protected MudouTipo(): void;
+    protected OntxtProdutoCProcurou(s: MouraTextBoxProcura, e: MouraEventArgs): void;
+    protected OnLimparProduto(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected OnValidando(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Controle_Vasilhame): void;
+    protected LimparModal(): void;
+    protected LimparProduto(): void;
+    protected LimparCliente(): void;
+    protected OnDepoisBuscarExistente(Entidade: SiSMoura.Core.Entity.Controle_Vasilhame): void;
+    protected GetCadastrados(): void;
+    protected OnAntesGravar(): boolean;
+    protected OnDepoisGravar(): boolean;
+}
+declare var c_Vasilh: C_Vasilh;
+//# sourceMappingURL=C_Vasilh.d.ts.map

@@ -1,0 +1,47 @@
+declare class C_Transp extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Transportadora> {
+    readonly txtCodigo: MouraTextBoxProcura;
+    readonly grdFornecedoresDuplicados: MouraGridViewJS;
+    readonly mdFornecedoresDuplicados: MouraModal;
+    readonly txtCep: MouraTextBoxCep;
+    readonly txtEndereco: MouraTextBox;
+    readonly txtBairro: MouraTextBox;
+    readonly txtNumero: MouraTextBox;
+    readonly txtCidade: MouraTextBoxProcura;
+    readonly lblCidade: MouraLabel;
+    readonly txtCGC: MouraTextBoxCPF;
+    readonly txtInsc: MouraTextBox;
+    readonly txtNome: MouraTextBox;
+    readonly optTipo: MouraRadioButtonList;
+    readonly chkPadrao: MouraCheckBox;
+    readonly chkDelivery: MouraCheckBox;
+    readonly txtFone: MouraTextBoxTelefone;
+    readonly txtFax: MouraTextBoxTelefone;
+    readonly txtEmail: MouraTextBox;
+    readonly cboContribuinteIcms: MouraComboBox;
+    readonly txtObs: MouraTextBox;
+    readonly txtPlaca: MouraTextBox;
+    readonly txtRntc: MouraTextBox;
+    readonly cboUf: MouraComboBox;
+    Transportadora: any;
+    Transportadoras: any[];
+    readonly Grid: MouraGridViewJSEditavel;
+    protected Init(): void;
+    protected OnValidando(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected LimparServico(): void;
+    protected OnGridSelecionouItem(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected OnAntesGravar(): boolean;
+    protected OnDepoisGravar(): boolean;
+    OnPageLoad(): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Transportadora): void;
+    protected OnDepoisBuscarExistente(Entidade: SiSMoura.Core.Entity.Transportadora): void;
+    protected OnDepoisSetEntidade(Entidade: SiSMoura.Core.Entity.Transportadora): void;
+    protected MudouTipo(newValue: any, oldValue: any): void;
+    protected LimparCampos(): void;
+    protected MudarLabelComponente(componente: MouraCampo, novoTexto: string): void;
+    protected OnConsultarCEP(s: any, e: MouraTextBoxCepPesquisouEventArgs): void;
+    protected OntxtCGCChange(): void;
+    protected OnRepostaVisualizarTransportadoraCPF(result: MsgBoxResultEventArgs): void;
+    protected GetDadosPessoa(codigo: number): SiSMoura.Core.Entity.Pessoa;
+}
+declare var c_Transp: C_Transp;
+//# sourceMappingURL=C_Transp.d.ts.map

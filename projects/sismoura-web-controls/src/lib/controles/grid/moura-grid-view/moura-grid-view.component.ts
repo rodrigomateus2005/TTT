@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, DoCheck, KeyValueDiffers, KeyValueDiffer } from '@angular/core';
+import { Component, OnInit, ElementRef, DoCheck, KeyValueDiffers, KeyValueDiffer, Input, Output, EventEmitter } from '@angular/core';
 import { MouraControlComponent } from '../../core/moura-control/moura-control.component';
 import { MouraGridColumn } from './moura-grid-column';
 import { DevExtremeGridViewDirective } from '../../../diretivas/dev-extreme-grid-view.directive';
@@ -27,6 +27,7 @@ export class MouraGridViewComponent extends MouraControlComponent implements DoC
   public get colunas(): MouraGridColumn[] {
     return this.$colunas;
   }
+  @Input()
   public set colunas(value: MouraGridColumn[]) {
     this.$colunas = value;
 
@@ -37,6 +38,7 @@ export class MouraGridViewComponent extends MouraControlComponent implements DoC
   public get ngDataSource(): any[] {
     return this.$ngDataSource;
   }
+  @Input()
   public set ngDataSource(value: any[]) {
     this.$ngDataSource = value;
 
@@ -141,7 +143,8 @@ export class MouraGridViewComponent extends MouraControlComponent implements DoC
     this.setInstanceProperty((x) => x.tamahoPaginacao = value);
   }
 
-  public onSelecionouLinha: ($options) => void;
+  @Output()
+  public selecionouLinha = new EventEmitter();
 
   constructor(private differs: KeyValueDiffers) {
     super();

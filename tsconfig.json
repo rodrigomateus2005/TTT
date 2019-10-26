@@ -1,11 +1,5 @@
 {
   "compileOnSave": false,
-  "references": [
-    {
-      "path": "../",
-      "prepend": true
-    }
-  ],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
@@ -19,7 +13,7 @@
     "target": "es2015",
     "typeRoots": [
       "node_modules/@types",
-      "types-sismoura"
+      "sismoura-ref"
     ],
     "lib": [
       "es2018",

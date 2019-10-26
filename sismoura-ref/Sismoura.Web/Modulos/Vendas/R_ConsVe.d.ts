@@ -1,0 +1,47 @@
+declare class R_ConsVe extends MouraPageRelacaoAngular {
+    readonly AccordionFiltros: MouraAccordion;
+    readonly txtVenda: MouraTextBoxProcura;
+    readonly txtObservacao: MouraTextBox;
+    readonly lblCliente: MouraLabel;
+    readonly lblConsignacao: MouraLabel;
+    readonly lblData: MouraLabel;
+    readonly lblOrigemVenda: MouraLabel;
+    readonly lblUsuarioLogado: MouraLabel;
+    readonly lblIbpt: MouraLabel;
+    readonly lblSubTotal: MouraLabel;
+    readonly lblCreditoUtilizado: MouraLabel;
+    readonly lblDevolvidoTroca: MouraLabel;
+    readonly lblDescontoInformado: MouraLabel;
+    readonly lblDescontoTotal: MouraLabel;
+    readonly lblDescontoUnitarioSoma: MouraLabel;
+    readonly lblAcrescimo: MouraLabel;
+    readonly lblTotal: MouraLabel;
+    readonly lblCreditoGanho: MouraLabel;
+    readonly lblFormaPagamento: MouraLabel;
+    readonly lblTroco: MouraLabel;
+    readonly grdProdutos: MouraGridViewJS;
+    readonly grdCartao: MouraGridViewJS;
+    readonly grdCDC: MouraGridViewJS;
+    readonly grdCheques: MouraGridViewJS;
+    readonly grdCrediario: MouraGridViewJS;
+    readonly grdCrediarioAgrupado: MouraGridViewJS;
+    OnPageLoad(): void;
+    protected Init(): void;
+    protected PreencherGrade(): void;
+    protected PreencherGridProdutos(parametros: any): void;
+    protected PreencherGridCheques(parametros: any): void;
+    protected PreencherGridCrediario(parametros: any): void;
+    protected PreencherGridCartao(parametros: any): void;
+    protected PreencherGridCrediarioAgrupado(parametros: any): void;
+    protected PreencherGridCDC(parametros: any): void;
+    protected DadosVenda(parametros: any): any;
+    protected PreencherDadosVenda(parametros: any): void;
+    protected ExibirData(venda: any): void;
+    protected ExibirDadosCliente(venda: any): void;
+    protected ExibirTextoIbpt(venda: any): void;
+    protected ExibirUsuarioLogado(venda: any): void;
+    protected ExibirMensagemVendaCancelada(venda: any): void;
+    protected LimparCampos(): void;
+}
+declare const r_ConsVe: R_ConsVe;
+//# sourceMappingURL=R_ConsVe.d.ts.map

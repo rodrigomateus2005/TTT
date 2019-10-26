@@ -1,0 +1,40 @@
+declare class C_ContGru extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Contabil_Configuracao_Grupo> {
+    readonly txtContaContabilGrupo_hdnEmpresaContabil: HTMLInputElement;
+    readonly txtContaContabilCusto_hdnEmpresaContabil: HTMLInputElement;
+    readonly txtContaContabilEstoque_hdnEmpresaContabil: HTMLInputElement;
+    readonly hdnPreencher: HTMLInputElement;
+    readonly cboEmpresa: MouraComboBox;
+    readonly txtContaContabilGrupo: MouraTextBoxProcuraContabil;
+    readonly txtGrupo: MouraTextBoxProcura;
+    readonly txtContaContabilCusto: MouraTextBoxProcuraContabil;
+    readonly txtContaContabilEstoque: MouraTextBoxProcuraContabil;
+    readonly txtCodigo: MouraTextBoxProcura;
+    readonly txtHistoricoEntrada: MouraTextBoxProcura;
+    readonly txtHistoricoSaida: MouraTextBoxProcura;
+    readonly txtHistoricoCusto: MouraTextBoxProcura;
+    readonly chkDesconsiderarCusto: MouraCheckBox;
+    readonly btnGrupo: MouraButton;
+    readonly Grid: MouraGridViewJS;
+    readonly GrdSub: MouraGridViewJS;
+    readonly mdGrupo: MouraModal;
+    protected Init(): void;
+    protected OnGridSelecionouLinha(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected OnGrupoProcurou(): void;
+    protected LimparCampos(): void;
+    protected OnGrdSubSelecionouLinha(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected OnClickGrupo(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected GetCadastrados(): void;
+    protected OnDepoisGravar(): boolean;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Contabil_Configuracao_Grupo): boolean;
+    OnProcurou(): void;
+    protected OnDepoisDeletar(): boolean;
+    PreencherEmpresaContabil(): void;
+    protected OnContaContabilGrupoAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilGrupoPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnContaContabilCustoAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilEstoqueAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilCustoPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnContaContabilEstoquePesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+}
+declare var c_ContGru: C_ContGru;
+//# sourceMappingURL=C_ContGru.d.ts.map

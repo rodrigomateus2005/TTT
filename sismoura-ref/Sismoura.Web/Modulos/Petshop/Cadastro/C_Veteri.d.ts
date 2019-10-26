@@ -1,0 +1,48 @@
+declare class C_Veteri extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Animais_Veterinario> {
+    private PATH_CONTRATOS_PRESTADORES;
+    private itens;
+    readonly txtCNPJ: MouraTextBoxCPF;
+    readonly txtRazaoSocial: MouraTextBox;
+    readonly txtDiaPagamento: MouraTextBox;
+    readonly txtCRMV: MouraTextBox;
+    readonly txtEmail: MouraTextBox;
+    readonly txtTipo: MouraTextBoxProcura;
+    readonly Grid: MouraGridViewJS;
+    readonly cboEmpresFiltro: MouraComboBoxEmpresa;
+    readonly chkInativo: MouraCheckBox;
+    readonly txtCodigo: MouraTextBoxProcura;
+    readonly lstEmpresa: MouraListBoxEmpresa;
+    readonly chkCategoria: MouraCheckBoxList;
+    readonly lstTipo: MouraRadioButtonList;
+    readonly chkEnviarAplicativo: MouraCheckBox;
+    readonly chkTerceirizado: MouraCheckBox;
+    readonly cboModeloPagamento: MouraComboBox;
+    readonly txtValorHora: MouraTextBox;
+    readonly txtUsuario: MouraTextBoxProcura;
+    readonly btnAnexos: MouraButton;
+    readonly dlgAnexo: MouraModalAnexo;
+    protected Init(): void;
+    protected OnAntesAbrirProcuraTipoProfissional(s: any, e: any): void;
+    protected OnProcurouTxtTipo(s: MouraTextBoxProcura, e: MouraEventArgs): void;
+    protected OnEmpresChange(): void;
+    protected OnAntesGravar(): boolean;
+    protected ProcuraEmpresa(codEmpresa: number, lista: SiSMoura.Core.Entity.Profissional_Empresa[]): SiSMoura.Core.Entity.Profissional_Empresa;
+    protected OnGridSelecionouItem(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    OnPageLoad(): void;
+    protected OnGridCellPrepared(s: any, e: MouraGridViewJSCellPreparedEventArgs): void;
+    protected MudouTipo(newValue: any, oldValue: any): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Animais_Veterinario): void;
+    protected OnDepoisGravar(): boolean;
+    protected preencherCategoriasCadastradas(tipoProfissional: number): void;
+    private _preencherCategoria;
+    protected preencherCategorias(tipoProfissional: number): void;
+    protected OnDepoisBuscarExistente(Entity: SiSMoura.Core.Entity.Animais_Veterinario): void;
+    protected PreencherGrade(): void;
+    protected PreencherEmpresa(Entidade: SiSMoura.Core.Entity.Animais_Veterinario): void;
+    protected LimparCampos(): void;
+    protected OnCheckTerceirizado(s: MouraCheckBox, e: MouraEventArgs): void;
+    protected OnTxtDiaPagamentoChange(s: MouraTextBox, e: MouraEventHandler): void;
+    private OnBtnAnexoClick;
+}
+declare var c_Veteri: C_Veteri;
+//# sourceMappingURL=C_Veteri.d.ts.map

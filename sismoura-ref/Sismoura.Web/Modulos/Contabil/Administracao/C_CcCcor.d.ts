@@ -1,0 +1,45 @@
+declare class C_CcCcor extends MouraPageAngular {
+    readonly txtContaContabil_hdnEmpresaContabil: HTMLInputElement;
+    readonly txtContaContabilFornecedor_hdnEmpresaContabil: HTMLInputElement;
+    readonly txtContaContabilCliente_hdnEmpresaContabil: HTMLInputElement;
+    readonly txtContaJuros_hdnEmpresaContabil: HTMLInputElement;
+    readonly txtContaDesconto_hdnEmpresaContabil: HTMLInputElement;
+    readonly txtContaContabil: MouraTextBoxProcuraContabil;
+    readonly txtContaContabilFornecedor: MouraTextBoxProcuraContabil;
+    readonly txtContaContabilCliente: MouraTextBoxProcuraContabil;
+    readonly txtContaJuros: MouraTextBoxProcuraContabil;
+    readonly txtContaDesconto: MouraTextBoxProcuraContabil;
+    readonly cboContaCorrente: MouraContaCorrenteCombo;
+    readonly cboEmpresa: MouraComboBox;
+    readonly chkLancamentoMultiplo: MouraCheckBox;
+    readonly txtHistoricoBaixaPagar: MouraTextBoxProcura;
+    readonly txtHistoricoBaixaReceber: MouraTextBoxProcura;
+    readonly txtHistoricoTransferencia: MouraTextBoxProcura;
+    readonly btnGravar: MouraButton;
+    readonly btnLimpar: MouraButton;
+    readonly Grid: MouraGridViewJS;
+    readonly txtContaContabilMulta: MouraTextBoxProcuraContabil;
+    protected Init(): void;
+    protected OnClickBotaoLinha(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected OnClickLimpar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickGravar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected GetRegistrosCadastrados(): void;
+    PreencherEmpresaContabil(codEmpresa: any): void;
+    protected PreencherTela(): void;
+    OnPageLoad(): void;
+    protected LimparCampos(): void;
+    protected OnContaContabilJurosAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilDescontoAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilMultaAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilJurosPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnContaContabilDescontoPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnContaContabilPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnContaContabilMultaPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnContaContabilFornecedorAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilFornecedorPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnContaContabilClienteAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilClientePesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+}
+declare var c_CcCcor: C_CcCcor;
+//# sourceMappingURL=C_CcCcor.d.ts.map

@@ -1,0 +1,41 @@
+declare class G_PISCOF_Angular extends MouraPageAngular {
+    readonly grdPeriodo: MouraGridViewJSEditavel;
+    readonly grdCC: MouraGridViewJSEditavel;
+    readonly txtMesAno: MouraTextBoxMesAno;
+    readonly btnExportar: MouraButton;
+    readonly btnDownload: MouraButton;
+    readonly cboTipoApuracaoCC: MouraComboBox;
+    readonly cboCstCC: MouraComboBox;
+    readonly txtCodigoCC: MouraTextBox;
+    Conta: any;
+    Contas: any[];
+    Periodo: any;
+    Periodos: any[];
+    readonly cboEmpresa: MouraComboBoxEmpresa;
+    readonly cboSituacao: MouraComboBox;
+    readonly cboMotivo: MouraComboBox;
+    readonly cboMeses: MouraComboBox;
+    readonly chkSemMovimento: MouraCheckBox;
+    readonly chkPresumidoConsolidado: MouraCheckBox;
+    readonly chkEnviarSemCredito: MouraCheckBox;
+    readonly mdValidacao: MouraModal;
+    readonly txtValidacao: MouraTextBox;
+    readonly cboTipoArq: MouraComboBox;
+    caminhoSessao: any;
+    arq: any;
+    OnPageLoad(): void;
+    protected Init(): void;
+    protected MudouTipo(): void;
+    protected OnCheckSemMovimentoChange(): void;
+    protected GravarCC(s: any, e: MouraGridViewJSEditavelItemValidandoEventArgs): void;
+    protected ExcluirCC(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected LimparCamposCC(): void;
+    protected OnValidando(s: any, e: MouraGridViewJSEditavelItemValidandoEventArgs): void;
+    protected OnValidandoPeriodo(s: any, e: MouraGridViewJSEditavelItemValidandoEventArgs): void;
+    protected PeriodoAdicionado(s: any, e: MouraGridViewJSEditavelItemValidandoEventArgs): void;
+    protected OnExportarClick(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnGrdSelecionouItem(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected PreencherGradeContabil(): void;
+}
+declare var g_PISCOF_Angular: G_PISCOF_Angular;
+//# sourceMappingURL=G_PISCOF_Angular.d.ts.map

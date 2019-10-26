@@ -1,0 +1,41 @@
+declare class C_CartPr extends MouraPageAngular {
+    readonly gridCartoes: MouraGridViewJSEditavel;
+    readonly gridFaixaNumerica: MouraGridViewJSEditavel;
+    readonly btnFaixaNumerica: MouraButton;
+    readonly txtProduto: MouraTextBoxProcura;
+    readonly txtCartao: MouraTextBox;
+    readonly txtValidade: MouraTextBox;
+    readonly cboEmpresa: MouraComboBoxEmpresa;
+    readonly txtNumeroInicial: MouraTextBox;
+    readonly txtNumeroFinal: MouraTextBox;
+    readonly mdFaixaNumerica: MouraModal;
+    readonly lblQuantidade: MouraLabel;
+    readonly txtModalValidade: MouraTextBox;
+    Cartoes: any[];
+    CartoesFaixa: any[];
+    CartaoFaixa: any;
+    Entity: SiSMoura.Core.Entity.Cartao_Presente;
+    readonly btnLimpar: MouraButton;
+    readonly btnGerar: MouraButton;
+    readonly btnFechar: MouraButton;
+    readonly btnOK: MouraButton;
+    protected Init(): void;
+    OnPageLoad(): void;
+    protected PreencherGridCadastrados(): void;
+    protected OnClickBtnAdicionar(): void;
+    protected OnClickbtnFaixaNumerica(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickBtnLimpar(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected OnClickbtnGerar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickbtnFechar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickbtnOK(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnExcluiuCartao(s: any, e: MouraGridViewJSEditavelItemEventArgs): void;
+    protected limparModal(): void;
+    protected LimparCampos(): void;
+    private Gravar;
+    protected ValidarProdutoCartaoPresente(): boolean;
+    protected ValidarCartaoExistente(): SiSMoura.Core.Entity.Cartao_Presente[];
+    protected ValidarCamposTela(): boolean;
+    protected ValidarCamposModal(): boolean;
+}
+declare const c_CartPr: C_CartPr;
+//# sourceMappingURL=C_CartPr.d.ts.map

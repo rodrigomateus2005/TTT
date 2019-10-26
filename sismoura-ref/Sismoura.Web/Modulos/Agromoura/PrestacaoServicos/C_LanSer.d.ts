@@ -1,0 +1,46 @@
+declare class C_LanSer extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Agromoura_Servico_Prestado> {
+    readonly grd: MouraGridViewJSEditavel;
+    readonly grdRomaneio: MouraGridViewJS;
+    readonly txtCodigo: MouraTextBoxProcura;
+    readonly txtContrato: MouraTextBoxProcura;
+    readonly txtFazenda: MouraTextBoxProcura;
+    readonly txtData: MouraTextBoxData;
+    readonly mdRomaneio: MouraModal;
+    readonly txtTurno: MouraTextBox;
+    readonly txtSafra: MouraTextBox;
+    readonly txtTalhao: MouraTextBox;
+    readonly txtArea: MouraTextBox;
+    readonly txtColhedora: MouraTextBoxProcura;
+    readonly lblTotalCarregada: MouraLabel;
+    readonly lblTotalColhido: MouraLabel;
+    readonly lblNomeArquivo: MouraLabel;
+    readonly txtOperadorColhedora: MouraTextBoxProcura;
+    readonly txtTransbordo: MouraTextBoxProcura;
+    readonly txtOperadorTransbordo: MouraTextBoxProcura;
+    readonly txtCanaCarregada: MouraTextBox;
+    readonly txtCanaColhida: MouraTextBox;
+    readonly txtRomaneio: MouraTextBox;
+    readonly hdnPath: HTMLInputElement;
+    readonly btnRomaneio: MouraButton;
+    readonly btnImportar: MouraButton;
+    readonly btnGerar: MouraButton;
+    Dados: SiSMoura.Core.Entity.Agromoura_Servico_PrestadoRetorno[];
+    codigo: number;
+    readonly fileUpload: MouraFileUpload;
+    private contrato;
+    protected Init(): void;
+    protected OnFilesUploadStart(source: DevExpress.Web.Scripts.ASPxClientUploadControl, ev: any): void;
+    protected OnFilesUploadComplete(source: DevExpress.Web.Scripts.ASPxClientUploadControl, ev: any): void;
+    protected OnGrdSelecionouItem(s: any, e: MouraGridViewJSEditavelItemEventArgs): void;
+    protected OnClickRomaneio(s: MouraButton, e: MouraClickEventArgs): void;
+    protected OnClickImportar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Agromoura_Servico_Prestado): void;
+    protected OnAntesGravar(): boolean;
+    protected OnDepoisGravar(): boolean;
+    protected VerificarPreenchimento(): void;
+    protected LimparGrade(): void;
+    protected BuscarGrade(): void;
+    protected BuscarTotal(): void;
+}
+declare var c_LanSer: C_LanSer;
+//# sourceMappingURL=C_LanSer.d.ts.map

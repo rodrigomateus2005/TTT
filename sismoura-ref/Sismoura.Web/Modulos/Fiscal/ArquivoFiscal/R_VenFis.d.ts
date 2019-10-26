@@ -1,0 +1,41 @@
+declare class R_VenFis extends MouraPageRelacaoAngular {
+    readonly AccordionFiltros: MouraAccordion;
+    readonly txtPeriodo: MouraTextBoxPeriodo;
+    readonly cboEmissorCupom: MouraComboBox;
+    readonly chkCPF: MouraCheckBox;
+    readonly cboECF: MouraComboBox;
+    readonly cboLista: MouraComboBox;
+    readonly cboTaxa_Tributaria: MouraComboBox;
+    readonly chkDiscriminar: MouraCheckBox;
+    readonly chkPIS_CONFINS: MouraCheckBox;
+    readonly lstGrupoProduto: MouraCheckBoxList;
+    readonly grdResumido: MouraGridViewJS;
+    readonly grdDiscriminado: MouraGridViewJS;
+    readonly grdPisCofins: MouraGridViewJS;
+    readonly pntbRelacoes: MouraTabPanel;
+    readonly abaResumido: MouraTabPage;
+    readonly abaDiscriminado: MouraTabPage;
+    readonly abaPisCofins: MouraTabPage;
+    readonly lblICMSRetido: MouraLabel;
+    readonly lblICMSIsento: MouraLabel;
+    readonly lblICMSNormal: MouraLabel;
+    readonly lstEmpresa: MouraListBoxEmpresa;
+    readonly lblTotalEmitido: MouraLabel;
+    readonly lblTotalCancelado: MouraLabel;
+    readonly lblValorTotalFinal: MouraLabel;
+    protected Init(): void;
+    OnPageLoad(): void;
+    protected OnVizualizarComponentes(): void;
+    protected PreencherGrade(): void;
+    protected GerarRelacaoResumidoImpFiscal(): void;
+    protected GerarRelacaoResumidoSAT_NFCe(nomeFuncao: any): void;
+    protected GerarRelacaoDiscriminadoImpFiscal(): void;
+    protected GerarRelacaoDiscriminadoSAT_NFCe(nomeFuncao: any): void;
+    protected GerarRelacaoPisCofinsImpFiscal(): void;
+    protected GerarRelacaoPisCofinsSAT_NFCe(nomeFuncao: any): void;
+    protected MontarGrade(grid: MouraGridViewJS, retorno: any): void;
+    protected OnGridCellPrepared(s: any, e: MouraGridViewJSCellPreparedEventArgs): void;
+    protected LimparCampos(): void;
+}
+declare var r_VenFis: R_VenFis;
+//# sourceMappingURL=R_VenFis.d.ts.map

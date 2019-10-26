@@ -39,9 +39,7 @@ export class MouraMenuComponent extends MouraControlComponent {
           retorno = [];
       }
 
-      for (let i = 0; i < menus.length; i++) {
-          const menu = menus[i];
-
+      for (const menu of menus) {
           if (menu.MenusFilhos && menu.MenusFilhos.length) {
               this.filtrarMenus(menu.MenusFilhos, retorno);
           } else {

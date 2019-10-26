@@ -1,0 +1,41 @@
+declare class C_VisDiaN extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Console_Visita_Historico> {
+    readonly grdHistorico: MouraGridViewJS;
+    readonly grdRfid: MouraGridViewJS;
+    readonly grdTelefones: MouraGridViewJS;
+    readonly txtCodigo: MouraTextBoxProcura;
+    readonly txtCliente: MouraTextBoxProcura;
+    readonly lblCidade: MouraLabel;
+    readonly txtData: MouraTextBoxData;
+    readonly txtHora: MouraTextBoxHora;
+    readonly txtContato: MouraTextBox;
+    readonly cboTipo_Atendimento: MouraComboBox;
+    readonly cboSituacao: MouraComboBox;
+    readonly txtReagendamento: MouraTextBoxData;
+    readonly txtHoraReagendamento: MouraTextBoxHora;
+    readonly txtVendedor: MouraTextBoxProcura;
+    readonly txtHistorico: MouraTextBox;
+    readonly cboNaoFechamento: MouraComboBox;
+    readonly btnEmail: MouraButton;
+    readonly hdnUsuario: HTMLInputElement;
+    protected Init(): void;
+    protected OnbtnEmailClick(s: MouraButton, e: MouraClickEventArgs): void;
+    protected OnAntesDeletar(): boolean;
+    protected OnDepoisGravar(): boolean;
+    private VerificarReagendamentoExactSales;
+    private VenderLeadExactSales;
+    private DescartarLeadExactSales;
+    protected OnAntesGravar(): boolean;
+    protected OnProcurou(): void;
+    protected Habilitar(Flag: boolean): void;
+    protected LimparCampos(): void;
+    protected OnClientePesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraPesquisandoEventArgs): void;
+    protected OnCodigoPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraPesquisandoEventArgs): void;
+    private SelecionouGrade;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Console_Visita_Historico): void;
+    protected ObrigarResponsavel(): void;
+    protected OncboSituacaoMudou(): void;
+    protected OntxtClienteProcurou(): void;
+    OnPageLoad(): void;
+}
+declare var c_VisDiaN: C_VisDiaN;
+//# sourceMappingURL=C_VisDiaN.d.ts.map

@@ -1,0 +1,44 @@
+declare class C_LanCon extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Contabil_Lancamento> {
+    readonly txtCodigo: MouraTextBoxProcura;
+    readonly cboEmpresa: MouraComboBox;
+    readonly txtData: MouraTextBoxData;
+    readonly txtDocumento: MouraTextBox;
+    readonly cboTipo: MouraComboBox;
+    readonly txtContaDebito: MouraTextBoxProcuraContabil;
+    readonly txtValor_Debito: MouraTextBox;
+    readonly txtContaCredito: MouraTextBoxProcuraContabil;
+    readonly txtValor_Credito: MouraTextBox;
+    readonly txtHistorico: MouraTextBoxProcura;
+    readonly txtDescricao: MouraTextBox;
+    readonly Grid: MouraGridViewJSEditavel;
+    readonly lblDebito: MouraLabel;
+    readonly lblCredito: MouraLabel;
+    readonly lblDiferenca: MouraLabel;
+    readonly btnNovoA: MouraButton;
+    readonly txtContaDebito_hdnEmpresaContabil: HTMLInputElement;
+    readonly txtContaCredito_hdnEmpresaContabil: HTMLInputElement;
+    Lancamentos: any[];
+    Lancamento: SiSMoura.Core.Entity.ContabilLancamentoRetorno;
+    protected Init(): void;
+    protected OnClickBotaoNovoPartir(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnLimpandoItem(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected OnValidandoAdicionar(s: any, e: MouraGridViewJSEditavelItemValidandoEventArgs): void;
+    protected OnComboTipoSelectedIndexChanged(): void;
+    protected OnDepoisLimpar(Entity: SiSMoura.Core.Entity.Contabil_Lancamento): void;
+    OnPageLoad(): void;
+    protected VerificarTipo(Tipo: string): void;
+    protected RecalcularLabels(s: any, e: MouraGridViewJSEditavelItemEventArgs): void;
+    protected CalcularTotal(EntityContabil: SiSMoura.Core.Entity.Contabil_Lancamento): void;
+    protected habilitarCampos(Tipo: string): void;
+    PreencherEmpresaContabil(): void;
+    protected OnContaContabilCreditoAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilCreditoPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnContaContabilDebitoAntesAbrirProcura(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraAntesAbrirProcuraEventArgs): void;
+    protected OnContaContabilDebitoPesquisando(s: MouraTextBoxProcura, ev: MouraTextBoxProcuraContabilPesquisandoEventArgs): void;
+    protected OnTxtHistoricoProcurou(s: MouraTextBoxProcura, e: MouraEventArgs): void;
+    protected OnDepoisGravar(): boolean;
+    protected OnAntesGravar(): boolean;
+    protected OnDepoisBuscarExistente(Entidade: SiSMoura.Core.Entity.Contabil_Lancamento): void;
+}
+declare var c_LanCon: C_LanCon;
+//# sourceMappingURL=C_LanCon.d.ts.map

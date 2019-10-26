@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MouraCampoComponent } from '../moura-campo/moura-campo.component';
-import { MouraService } from '../../../../controls/services/moura.service';
+import { MouraService } from '../../../services/moura.service';
 
 @Component({
   selector: 'moura-combo-box-empresa',
@@ -33,7 +33,7 @@ export class MouraComboBoxEmpresaComponent extends MouraCampoComponent {
         this.$textField = value;
     }
 
-    private $ngModelMoura;
+    private $ngModelMoura: any;
     public get ngModelMoura(): any {
         return this.$ngModelMoura;
     }

@@ -1,0 +1,48 @@
+declare class R_ClaAlt extends MouraPageRelacaoAngular {
+    readonly AccordionFiltros: MouraAccordion;
+    readonly txtObjetivoResumido: MouraTextBox;
+    readonly btnAlterarObjetivo: MouraButton;
+    readonly grid: MouraGridViewJS;
+    readonly txtPeriodo: MouraTextBoxPeriodo;
+    readonly txtCliente: MouraTextBoxProcura;
+    readonly tab: MouraTabPanel;
+    readonly mdClassificacao: MouraModal;
+    readonly txtHistorico: MouraTextBox;
+    readonly lblCodigo: MouraLabel;
+    readonly lblCliente: MouraLabel;
+    readonly lblTela: MouraLabel;
+    readonly btnClassificar: MouraButton;
+    readonly btnCancelar: MouraButton;
+    readonly txtHorasDesenvolvimento: MouraTextBox;
+    readonly txtHorasAnalise: MouraTextBox;
+    readonly txtHorasTeste: MouraTextBox;
+    readonly cboClassificadas: MouraComboBox;
+    readonly accRelacao: MouraAccordion;
+    readonly txtIncluirHistorico: MouraTextBox;
+    readonly btnIncluir: MouraButton;
+    readonly txtAnalise: MouraTextBox;
+    readonly cboResponsavel: MouraComboBox;
+    readonly cboMotivo: MouraComboBox;
+    readonly txtResolvida: MouraTextBox;
+    readonly btnRecusar: MouraButton;
+    private verificadoAutorizacaoAprovar;
+    protected Init(): void;
+    OnPageLoad(): void;
+    protected MudouMotivo(): void;
+    protected OnClickRecusar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected Recusar(): void;
+    protected VerificarAutorizacaoAprovar(retorno: MouraFuncoesAdministrativasRetorno): void;
+    protected OnClickClassificar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickIncluir(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickCancelar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnGridSelecionouItem(s: any, e: MouraGridViewJSClickBotaoLinhaEventArgs): void;
+    protected LimparCampos(): void;
+    protected CarregarHistorico(codAtividade: number, codCliente: number, cliente: string, tela: string, responsavelCadastro: string, horasDesenvolvimento: number, horasAnalise: number, horasTeste: number, objetivoResumido: string): void;
+    protected PreencherAnalise(codAtividade: number): void;
+    protected PreencherHistorico(codAtividade: number): void;
+    protected PreencherGrade(): void;
+    protected OnGridCellPrepared(s: any, e: MouraGridViewJSCellPreparedEventArgs): void;
+    protected OnClickAlterarObjetivo(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+}
+declare var r_ClaAlt: R_ClaAlt;
+//# sourceMappingURL=R_ClaAlt.d.ts.map

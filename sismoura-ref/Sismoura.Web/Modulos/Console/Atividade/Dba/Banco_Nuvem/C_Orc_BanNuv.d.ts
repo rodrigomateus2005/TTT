@@ -1,0 +1,43 @@
+declare class C_Orc_BanNuv extends MouraPageCadastroAngular<SiSMoura.Core.Entity.Console_DBA_Orcamento_Nuvem> {
+    readonly grdOrcNuvItem: MouraGridViewJSEditavel;
+    readonly txtCodigo: MouraTextBoxProcura;
+    readonly lblUsuario_Cadastrou: MouraLabel;
+    readonly lblData_Cadastro: MouraLabel;
+    readonly txtCod_Cliente: MouraTextBoxProcura;
+    readonly txtContatoCliente: MouraTextBox;
+    readonly txtEmailCliente: MouraTextBox;
+    readonly txtRazao_Social: MouraTextBox;
+    readonly txtCNPJ: MouraTextBox;
+    readonly txtContato: MouraTextBox;
+    readonly txtEmail: MouraTextBox;
+    readonly txtQtde_Estabelecimento: MouraTextBox;
+    readonly txtTelefoneCliente: MouraTextBoxTelefone;
+    readonly txtTelefone: MouraTextBoxTelefone;
+    readonly optTipo_Cliente: MouraRadioButtonList;
+    OrcamentoNuvemItens: SiSMoura.Core.Entity.Console_DBA_Orcamento_Nuvem_Item[];
+    OrcamentoNuvemItem: SiSMoura.Core.Entity.Console_DBA_Orcamento_Nuvem_Item;
+    readonly btnAdicionar: MouraButton;
+    readonly mdImprimir: MouraModal;
+    readonly btnEscolherModelo: MouraButton;
+    readonly btnImprimir: MouraButton;
+    readonly cboModelo: MouraComboBox;
+    readonly hdnUsuario_Cadastrou: HTMLInputElement;
+    readonly cboSituacao: MouraComboBox;
+    readonly htmlEditor: MouraHTMLEditor;
+    protected Init(): void;
+    protected OnGravouSucesso(s: any, e: MouraGravouSucessoEventArgs): void;
+    protected OnExcluiuSucesso(s: any, e: any): void;
+    protected AtualizarGrid(): void;
+    protected OnProcurou(): void;
+    protected OnProcurouCliente(): void;
+    protected OnClickAlterarOrcamentoNuvemItem(s: any, e: MouraGridViewJSEditavelItemCancelavelEventArgs): void;
+    protected OnClickOrdemNuvemItens(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): boolean;
+    protected OnSelecionarTipoCliente(): void;
+    protected OnModalImprimir(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickImprimir(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnAntesGravar(): boolean;
+    protected OnDepoisLimpar(entidade: SiSMoura.Core.Entity.Console_DBA_Orcamento_Nuvem): void;
+    protected SetEntity(Entidade: SiSMoura.Core.Entity.Console_DBA_Orcamento_Nuvem): void;
+}
+declare var c_Orc_BanNuv: C_Orc_BanNuv;
+//# sourceMappingURL=C_Orc_BanNuv.d.ts.map

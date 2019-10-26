@@ -1,0 +1,42 @@
+declare class C_ImpProm extends MouraPage {
+    readonly btnGerar: MouraButton;
+    readonly btnAlterar: MouraButton;
+    readonly btnAtualizar: MouraButton;
+    readonly btnLimpar: MouraButton;
+    readonly grid: MouraGridViewJS;
+    readonly txtDescricao: MouraTextBox;
+    readonly txtFornecedor: MouraTextBoxProcura;
+    readonly txtGrupo: MouraTextBoxProcura;
+    readonly txtSubGrupo: MouraTextBoxProcura;
+    readonly txtCodReferencia: MouraTextBoxProcura;
+    readonly txtReferencia: MouraTextBox;
+    readonly txtMarca: MouraTextBoxProcura;
+    readonly txtCor: MouraTextBoxProcura;
+    readonly txtLinha: MouraTextBoxProcura;
+    readonly txtModelo: MouraTextBoxProcura;
+    readonly cboMarcado: MouraComboBox;
+    readonly lstEmpresa: MouraListBoxEmpresa;
+    readonly txtPorcentagem: MouraTextBox;
+    readonly txtValor: MouraTextBox;
+    readonly cboOperacao: MouraComboBox;
+    readonly txtPeriodo: MouraTextBoxPeriodo;
+    readonly lstSemana: MouraCheckBoxList;
+    protected Init(): void;
+    OnPageLoad(): void;
+    protected Gerar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected PreencherGrade(): void;
+    protected OnClickBtnAlterar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickBtnAtualizar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected OnClickBtnLimpar(s: any, e: DevExpress.Web.Scripts.ASPxClientButtonClickEventArgs): void;
+    protected LimparCampos(): void;
+    protected OnRespostaBtnAlterar(result: MsgBoxResultEventArgs): void;
+    protected OnRespostaBtnAtualizar(result: MsgBoxResultEventArgs): void;
+    protected AlterarGrade(): void;
+    protected AtualizarGrade(): void;
+    protected Subtrair(produtos: any[]): void;
+    protected Substituir(produtos: any[]): void;
+    protected PreencherItem(e: any): MouraGridViewJSItemEventArgs;
+    protected OnEditouItem(s: any, e: MouraGridViewJSItemEventArgs): void;
+}
+declare var c_ImpProm: C_ImpProm;
+//# sourceMappingURL=C_ImpProm.d.ts.map
